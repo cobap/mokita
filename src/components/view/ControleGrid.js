@@ -12,6 +12,11 @@ import { withStyles } from '@material-ui/core/styles';
 // import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
 
+import fire from './../../fire';
+
+// var database = fire.database();
+// var dados_turbina = database.ref("UDV")
+
 const styles = theme => ({
   root: {
   },
@@ -46,26 +51,28 @@ class CenteredGrid extends Component {
     // var handleMudancaStatus = this.handleMudancaStatus.bind(this);
   }
 
-  atualizaTurbinas(first_load) {
-    // if (first_load === true) {
-    //   this.setState({ status_turbinas: [], _status_turbinas_backup: []})
-    // }
-    // else {
-    //   fetch('/turbine_status/' + this.state.windfarm)
-    //     .then((response) => response.json())
-    //     .then((data) => this.setState({ status_turbinas: data, _status_turbinas_backup: data}))
-    // }
+  atualizaTurbinas() {
+    // Get a database reference to our posts
+    var ref = fire.database().ref("UDV");
+
+    ref.once('value').then((snapshot) => {
+        this.setState({ status_turbinas: snapshot.val() });
+    });
   }
 
   componentWillMount() {
-    this.atualizaTurbinas();
-    setInterval(this.atualizaTurbinas(), 60000);
+      this.atualizaTurbinas()
+  }
+
+  componentDidMount() {
+      setInterval(this.atualizaTurbinas, 50000);
   }
 
   handleMudancaWindfarm(novo_parque) {
-    fetch('/turbine_status/' + novo_parque)
-      .then((response) => response.json())
-      .then((data) => this.setState({ status_turbinas: data, _status_turbinas_backup: data, isLoadingTurbineStatus: false, windfarm: novo_parque }))
+    // fetch('/turbine_status/' + novo_parque)
+    //   .then((response) => response.json())
+    //   .then((data) => this.setState({ status_turbinas: data, _status_turbinas_backup: data, isLoadingTurbineStatus: false, windfarm: novo_parque }))
+
   }
 
   handleMudancaStatus(novo_status) {

@@ -22,41 +22,25 @@ export const menuList = (
     <Link to="/">
       <ListItem button>
         <ListItemIcon>
-          <AssessmentIcon />
+          <AssignmentIcon />
         </ListItemIcon>
-        <ListItemText primary="Metricas" />
+        <ListItemText primary="Criador de SR" />
       </ListItem>
     </Link>
-    <Link to="/tarefas">
+    <Link to="/">
       <ListItem button>
         <ListItemIcon>
           <AssignmentTurnedInIcon />
         </ListItemIcon>
-        <ListItemText primary="Tarefas" />
+        <ListItemText primary="Debrifar SR" />
       </ListItem>
     </Link>
-    <Link to="/calendario">
+    <Link to="/">
       <ListItem button>
         <ListItemIcon>
-          <TodayIcon />
+          <AssessmentIcon />
         </ListItemIcon>
-        <ListItemText primary="Planejamento" />
-      </ListItem>
-    </Link>
-    <Link to="/checklists">
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary="Checklists" />
-      </ListItem>
-    </Link>
-    <Link to="/ajustes">
-      <ListItem button>
-        <ListItemIcon>
-          <BuildIcon />
-        </ListItemIcon>
-        <ListItemText primary="Ajustes" />
+        <ListItemText primary="Ver lista de SR" />
       </ListItem>
     </Link>
   </div>
