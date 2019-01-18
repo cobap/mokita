@@ -12,9 +12,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-import wtg2 from './../css/wtg2.svg';
 import wtg3 from './../css/wtg3.svg';
-import wtg from './../css/wtg.svg';
 
 import CriaSR from './CriaSR';
 
@@ -35,7 +33,6 @@ const styles = theme => ({
 });
 
 function TurbineStatus(props) {
-  const status = props.status;
   return (<img src={wtg3} height={32} alt="logo" />);
 };
 
@@ -82,7 +79,7 @@ class ListaTurbinas extends React.Component {
     console.log('Criar SR para: ' + someArg);
     console.log(someArg);
     console.log(someArg.key);
-    fire.database().ref('debriefs').push( someArg );
+    fire.database().ref('servicerequest').push( someArg );
     this.setState({turbina_foi_selecionada:false, openResultadoSR:true, codigo_sr:someArg.key });
   }
 

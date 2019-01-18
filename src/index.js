@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 // Components
 import ControleGrid from './components/view/ControleGrid';
+import Debrief from './components/view/Debrief';
 
 // Router
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -16,6 +17,7 @@ ReactDOM.render(
   <BrowserRouter>
       <Switch>
           <Route path="/" exact={true} component={ControleGrid} />
+          <Route path="/debrifar" exact={true} component={Debrief} />
       </Switch>
   </ BrowserRouter>
   , document.getElementById('root'));

@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import BuildIcon from '@material-ui/icons/Build';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -88,14 +87,6 @@ const complexo_eolico = [
   { value: 'AES', label: 'AES' }
 ];
 
-const status_turbinas = [
-  { value: 1, label: 'Online'},
-  { value: 5, label: 'Tripped'},
-  { value: 0, label: 'NetCOM'},
-  { value: 10, label: 'Repair'},
-  { value: 11, label: 'Maintenance'}
-];
-
 class Header extends Component {
   state = {
     left: false,
@@ -114,7 +105,7 @@ class Header extends Component {
 
   render() {
     var handleMudancaWindfarm = this.props.handleMudancaWindfarm;
-    var handleMudancaStatus = this.props.handleMudancaStatus;
+    // var handleMudancaStatus = this.props.handleMudancaStatus;
 
     const { classes } = this.props;
     const sideList = ( <div className={classes.list}> <List>{menuList}</List> </div> );
@@ -137,18 +128,10 @@ class Header extends Component {
 
               <div className={classes.menuAjustes} >
                 <IconButton aria-owns={openMenuParques ? 'menu-appbar' : undefined} aria-haspopup="true" onClick={this.handleMenuEscolhaParque} color="inherit" >
-                  <BuildIcon />
+                  <SearchIcon />
                 </IconButton>
                 <Menu id="menu-appbar" anchorEl={anchorEscolhaParque} anchorOrigin={{vertical: 'top', horizontal: 'right', }} transformOrigin={{ vertical: 'top', horizontal: 'right', }} open={openMenuParques} onClose={() => { this.handleCloseEscolhaParque() }} >
                   {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value} onClick={() => { this.handleCloseEscolhaParque(); handleMudancaWindfarm(option.value)}}> {option.label} </MenuItem> ))}
-                </Menu>
-              </div>
-              <div className={classes.menuAjustes} >
-                <IconButton aria-owns={openStatusTurbinas ? 'search-appbar' : undefined} aria-haspopup="true" onClick={this.handleMenuStatusTurbinas} color="inherit" >
-                  <SearchIcon />
-                </IconButton>
-                <Menu id="search-appbar" anchorEl={anchorStatusTurbinas} anchorOrigin={{vertical: 'top', horizontal: 'right', }} transformOrigin={{ vertical: 'top', horizontal: 'right', }} open={openStatusTurbinas} onClose={() => { this.handleCloseStatusTurbinas() }} >
-                  {status_turbinas.map(option => ( <MenuItem key={option.value} value={option.value} onClick={() => { this.handleCloseStatusTurbinas(); handleMudancaStatus(option.value)}}> {option.label} </MenuItem> ))}
                 </Menu>
               </div>
             </Toolbar>

@@ -7,8 +7,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 // Icons
-import TodayIcon from '@material-ui/icons/Today';
-import BuildIcon from '@material-ui/icons/Build';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
@@ -27,7 +25,7 @@ export const menuList = (
         <ListItemText primary="Criador de SR" />
       </ListItem>
     </Link>
-    <Link to="/">
+    <Link to="/debrifar">
       <ListItem button>
         <ListItemIcon>
           <AssignmentTurnedInIcon />
@@ -35,7 +33,7 @@ export const menuList = (
         <ListItemText primary="Debrifar SR" />
       </ListItem>
     </Link>
-    <Link to="/">
+    <Link to="/lista">
       <ListItem button>
         <ListItemIcon>
           <AssessmentIcon />
