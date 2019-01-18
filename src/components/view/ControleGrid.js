@@ -66,16 +66,8 @@ class CenteredGrid extends Component {
       // setInterval(this.atualizaTurbinas, 50000);
   }
 
-  handleMudancaWindfarm(novo_parque) {
-    // fetch('/turbine_status/' + novo_parque)
-    //   .then((response) => response.json())
-    //   .then((data) => this.setState({ status_turbinas: data, _status_turbinas_backup: data, isLoadingTurbineStatus: false, windfarm: novo_parque }))
-    this.atualizaTurbinas(novo_parque)
-  }
-
-  handleMudancaStatus(novo_status) {
-    this.setState({ filtro: novo_status, status_turbinas: this.state._status_turbinas_backup.filter(turbina => turbina.currentState === novo_status)});
-  }
+  handleMudancaWindfarm(novo_parque) { this.atualizaTurbinas(novo_parque) }
+  handleMudancaStatus(novo_status) { this.setState({ filtro: novo_status, status_turbinas: this.state._status_turbinas_backup.filter(turbina => turbina.currentState === novo_status)}); }
 
   render() {
     const { classes } = this.props;
