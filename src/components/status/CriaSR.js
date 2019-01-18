@@ -44,10 +44,11 @@ class CriaSR extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tipo_sr: 'O&M non PM',
+      tipo_sr: 'O&M - Non PM',
       sr_summary: '',
       lista_techs: [],
       novo_tech: '',
+      falha: '',
     };
   }
 
@@ -75,7 +76,7 @@ class CriaSR extends React.Component {
   };
 
   closeDialog(status) {
-    this.setState({ tipo_sr: 'O&M non PM', sr_summary: '', lista_techs: [], novo_tech: '', });
+    this.setState({ tipo_sr: 'O&M - Non PM', sr_summary: '', lista_techs: [], novo_tech: '', falha: '' });
     if(status === 0) {
       this.props.handleFechaCriacaoSR('turbina_foi_selecionada');
     }
@@ -86,7 +87,9 @@ class CriaSR extends React.Component {
       _sr.lista_techs = this.state.lista_techs;
       _sr.wtg = this.props.turbina.wtgName;
       _sr.serial = this.props.turbina.serial;
-      _sr.fault = this.props.falha;
+      _sr.falha = this.state.falha;
+      _sr.data = new Date().toISOString().substring(0,16).replace(':', '').replace('T', '').replace(new RegExp('-', 'g'), '')
+      _sr.key = _sr.wtg + _sr.data;
       this.props.handleCriacaoSR(_sr);
     }
   }
@@ -108,12 +111,12 @@ class CriaSR extends React.Component {
               <FormControl className={classes.formControl}>
                 <TextField autoFocus fullWidth id="sr_summary" required label="Problem Summary" variant="standard" className={classes.textField} value={this.state.sr_summary} onChange={this.handleChange('sr_summary')} margin="normal" />
                 <TextField disabled fullWidth id="wtg_name" label="WTG Name" variant="standard" className={classes.textField} value={this.props.turbina.wtgName} onChange={this.handleChange('wtg_name')} margin="normal" />
-                <TextField disabled fullWidth id="em_scada" label="SCADA Fault Code" variant="standard" className={classes.textField} value={this.props.falha} onChange={this.handleChange('em_scada')} margin="normal" />
+                <TextField fullWidth id="em_scada" required label="SCADA Fault Code" variant="standard" className={classes.textField} value={this.state.falha} onChange={this.handleChange('falha')} margin="normal" />
                 <InputLabel htmlFor="max-width">Tipoe de SR</InputLabel>
                 <Select value={this.state.tipo_sr} onChange={this.handleChange('tipo_sr')} inputProps={{ name: 'max-width', id: 'max-width', }} >
                   {tipo_sr.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
                 </Select>
-                <TextField fullWidth id="novo_tech" label="Add novo tech" variant="standard" className={classes.textField} value={this.state.novo_tech} onChange={this.handleChange('novo_tech')} margin="normal" />
+                <TextField required fullWidth id="novo_tech" label="Add novo tech" variant="standard" className={classes.textField} value={this.state.novo_tech} onChange={this.handleChange('novo_tech')} margin="normal" />
                 <Button onClick={() => {this.adicionaNovoTech()}} color="secondary"> +Tech </Button>
                 <Paper className={classes.root}>
                   {this.state.lista_techs.map(data => { return ( <Chip key={data.key} icon={<TagFacesIcon />} label={data.label} onDelete={this.handleDelete(data)} className={classes.chip} /> ); })}

@@ -51,28 +51,26 @@ class CenteredGrid extends Component {
     // var handleMudancaStatus = this.handleMudancaStatus.bind(this);
   }
 
-  atualizaTurbinas() {
-    // Get a database reference to our posts
-    var ref = fire.database().ref("UDV");
-
+  atualizaTurbinas(novo_parque) {
+    var ref = fire.database().ref(novo_parque);
     ref.once('value').then((snapshot) => {
-        this.setState({ status_turbinas: snapshot.val() });
+        this.setState({ status_turbinas: snapshot.val(), isLoadingTurbineStatus: false, windfarm: novo_parque });
     });
   }
 
   componentWillMount() {
-      this.atualizaTurbinas()
+      // this.atualizaTurbinas()
   }
 
   componentDidMount() {
-      setInterval(this.atualizaTurbinas, 50000);
+      // setInterval(this.atualizaTurbinas, 50000);
   }
 
   handleMudancaWindfarm(novo_parque) {
     // fetch('/turbine_status/' + novo_parque)
     //   .then((response) => response.json())
     //   .then((data) => this.setState({ status_turbinas: data, _status_turbinas_backup: data, isLoadingTurbineStatus: false, windfarm: novo_parque }))
-
+    this.atualizaTurbinas(novo_parque)
   }
 
   handleMudancaStatus(novo_status) {

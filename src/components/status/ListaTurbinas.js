@@ -8,12 +8,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
-// import wtg_online from './../css/wtg_1.svg';
-// import wtg_fault from './../css/wtg_5.svg';
-// import wtg_repair from './../css/wtg_repair.svg';
-// import wtg_maintenance from './../css/wtg_maintenance.svg';
-// import wtg_nocom from './../css/wtg_nocom.svg';
+import wtg2 from './../css/wtg2.svg';
+import wtg3 from './../css/wtg3.svg';
+import wtg from './../css/wtg.svg';
 
 import CriaSR from './CriaSR';
 
@@ -33,24 +34,10 @@ const styles = theme => ({
   }
 });
 
-// function TurbineStatus(props) {
-//   const status = props.status;
-//   if (status === 1 || status === 2 || status === 3) {
-//     return (<img src={wtg_online} height={32} alt="logo" />);
-//   }
-//   else if (status === 5)
-//     return (<img src={wtg_fault} height={32} alt="logo" />);
-//   else if (status === 10)
-//     return (<img src={wtg_repair} height={32} alt="logo" />);
-//   else if (status === 11)
-//     return (<img src={wtg_maintenance} height={32} alt="logo" />);
-//   else if (status === 0){
-//     return (<img src={wtg_nocom} height={32} alt="logo" />);
-//   }
-//   else {
-//     return (<img src={wtg_repair} height={32} alt="logo" />);
-//   }
-// };
+function TurbineStatus(props) {
+  const status = props.status;
+  return (<img src={wtg3} height={32} alt="logo" />);
+};
 
 class ListaTurbinas extends React.Component {
 
@@ -61,17 +48,27 @@ class ListaTurbinas extends React.Component {
       turbina_foi_selecionada: false,
       turbina_selecionada: false,
       falha_selecionada: null,
+      openResultadoSR: false,
     };
   }
 
+  handleClickSnackBar = () => {
+    this.setState({ openResultadoSR: true });
+  };
+
+  handleCloseSnackBar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    this.setState({ openResultadoSR: false });
+  };
 
   handleDetalhesFalha = (menu) => { this.setState({[menu] : !this.state[menu] }) };
 
-  handleSelecionaTurbina = (event, turbina, falha) => {
+  handleSelecionaTurbina = (event, turbina) => {
     this.setState({
       turbina_foi_selecionada: true,
       turbina_selecionada: this.props.turbines.find(_turbina => _turbina.wtgName === turbina),
-      falha_selecionada: falha
     });
     // this.setState({ turbina_selecionada: this.props.turbines.find(turbina => turbina.wtgName == id) });
   };
@@ -84,11 +81,9 @@ class ListaTurbinas extends React.Component {
   handleCriacaoSR(someArg) {
     console.log('Criar SR para: ' + someArg);
     console.log(someArg);
-    this.setState({turbina_foi_selecionada:false});
-
-    fetch("/enviar_sr", { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', }, mode: "cors", body: JSON.stringify(someArg) })
-      .then(response => console.log(response));
-
+    console.log(someArg.key);
+    fire.database().ref('debriefs').push( someArg );
+    this.setState({turbina_foi_selecionada:false, openResultadoSR:true, codigo_sr:someArg.key });
   }
 
   handleSubmit = (event) => {
@@ -128,7 +123,7 @@ class ListaTurbinas extends React.Component {
                 <div>
                   <ListItem button onClick={()=>{this.handleDetalhesFalha(turbina.wtgName)}}>
                     <ListItemIcon style={{height: 32}}>
-                      {/* <TurbineStatus status={turbina.currentState} /> */}
+                      <TurbineStatus status={turbina.currentState} />
                     </ListItemIcon>
                     <ListItemText inset primary={turbina.wtgName} />
                     {this.state[turbina.wtgName] ? <ExpandLess /> : <ExpandMore />}
@@ -136,9 +131,9 @@ class ListaTurbinas extends React.Component {
                   <Collapse in={this.state[turbina.wtgName]} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       {turbina.faults.map((falha) => { return (
-                        <ListItem button key={falha.name} className={classes.nested} onClick={event => this.handleSelecionaTurbina(event, turbina.key, falha.name)}>
+                        <ListItem button key={falha.name} className={classes.nested} onClick={event => this.handleSelecionaTurbina(event, turbina.key)}>
                           <ListItemIcon>
-                            {/* <TurbineStatus status={turbina.currentState} /> */}
+                            <TurbineStatus status={turbina.currentState} />
                           </ListItemIcon>
                           <ListItemText inset primary={falha.name + ' || ' + falha.time} secondary={falha.text} />
                         </ListItem>
@@ -147,9 +142,9 @@ class ListaTurbinas extends React.Component {
                   </Collapse>
                 </div>
               ) : (
-                <ListItem button>
+                <ListItem button key={turbina.key} className={classes.nested} onClick={event => this.handleSelecionaTurbina(event, turbina.key)}>
                   <ListItemIcon>
-                    {/* <TurbineStatus status={turbina.currentState} /> */}
+                    <TurbineStatus status={turbina.currentState} />
                   </ListItemIcon>
                   <ListItemText inset primary={turbina.wtgName} />
                 </ListItem>
@@ -159,7 +154,13 @@ class ListaTurbinas extends React.Component {
         })}
 
       </List>
-      <CriaSR open={this.state.turbina_foi_selecionada} turbina={this.state.turbina_selecionada} falha={this.state.falha_selecionada} handleFechaCriacaoSR = {handleFechaCriacaoSR.bind(this)} handleCriacaoSR = {handleCriacaoSR.bind(this)}/>
+      <CriaSR open={this.state.turbina_foi_selecionada} turbina={this.state.turbina_selecionada} handleFechaCriacaoSR = {handleFechaCriacaoSR.bind(this)} handleCriacaoSR = {handleCriacaoSR.bind(this)}/>
+      <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center', }} open={this.state.openResultadoSR} autoHideDuration={6000} onClose={this.handleCloseSnackBar} ContentProps={{ 'aria-describedby': 'message-id',}}
+        message={<span id="message-id">SR Criada com sucesso! Codigo: {this.state.codigo_sr} </span>} action={[
+        <IconButton key="close" aria-label="Close" color="inherit" className={classes.close} onClick={this.handleCloseSnackBar} >
+            <CloseIcon />
+        </IconButton>,]}
+      />
       </div>
     );
   }
