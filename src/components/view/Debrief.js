@@ -7,6 +7,9 @@ import Header from './../header/Header';
 import Divider from '@material-ui/core/Divider';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+
 
 import fire from './../../fire';
 
@@ -48,6 +51,8 @@ const styles = theme => ({
         textAlign: 'center',
         marginLeft: '37%',
         // margimRight: '50%',
+    },
+    botaoexclusao: {
     }
 });
 
@@ -128,18 +133,12 @@ class Debrief extends Component {
     fire.database().ref('debriefs').push(
         { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico }
     );
-    // this.setState({ numero_sr: '' });
+    this.setState({ numero_sr: '' });
   };
 
   handleChange = campo_formulario => event => { this.setState({ [campo_formulario]: event.target.value, }); };
 
   handleClose = () => { this.setState({ open: false }); };
-
-  handleErroData() {
-    if((new Date(this.state.fim_reparo) - new Date(this.state.inicio_reparo))/3600000.0 > 14) { return true; }
-    else if(this.state.fim_reparo <= this.state.inicio_reparo) { return true; }
-    return false;
-  }
 
   handleMudancaAtividade = idx => evt => {
     const nova_atividade = this.state.labor.map((atividade, sidx) => {
@@ -156,6 +155,9 @@ class Debrief extends Component {
     });
     this.setState({ material: nova_parts });
   };
+
+  handleRemoveAtividade = idx => () => { this.setState((prevState, props) => ({ labor: this.state.labor.filter((s, sidx) => idx !== sidx), keyLabor: prevState.keyLabor-1 })); };
+  handleRemoveParts = idx => () => { this.setState((prevState, props) => ({ material: this.state.labor.filter((s, sidx) => idx !== sidx), keyMaterial: prevState.keyMaterial-1 })); };
 
   adicionaNovoLabor = () => {
       let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), }
@@ -196,9 +198,12 @@ class Debrief extends Component {
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> HORAS UTILIZADAS: </Typography> </Paper>
             {this.state.labor.map((atividade, idx) => (
                 <div key={atividade.key}>
-                    <Paper className={classes.detalhes} elevation={1}> <Typography variant="p" component="p"> Atividade-{atividade.key} </Typography> </Paper>
+                    <Paper className={classes.detalhes} elevation={1}>
+                        <Typography variant="p" component="p"> Atividade-{atividade.key} </Typography>
+                    </Paper>
                     <TextField id="inicio" required label="Inicio atividade" type="datetime-local" variant="standard" value={atividade.inicio} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <TextField id="fim" required label="Fim atividade" type="datetime-local" variant="standard" value={atividade.fim} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
+                    <IconButton onClick={this.handleRemoveAtividade(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovoLabor()}} color="secondary"> +Labor </Button>
@@ -210,6 +215,7 @@ class Debrief extends Component {
                     <TextField id="partnumber" label="Part Number" type="standard" variant="standard" value={material.partnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
                     <TextField id="serialnumber" label="Serial Number" type="standard" variant="standard" value={material.serialnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
                     <TextField id="quantidade" label="Quantidade" type="number" variant="standard" value={material.quantidade} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <IconButton onClick={this.handleRemoveParts(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovaPart()}} color="secondary"> +Parts </Button>
