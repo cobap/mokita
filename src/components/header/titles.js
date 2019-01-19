@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import BackupIcon from '@material-ui/icons/Backup';
 
 // Router
 import { Link } from 'react-router-dom';
@@ -39,6 +40,14 @@ export const menuList = (
           <AssessmentIcon />
         </ListItemIcon>
         <ListItemText primary="Ver lista de SR" />
+      </ListItem>
+    </Link>
+    <Link to="/pcm">
+      <ListItem button>
+        <ListItemIcon>
+          <BackupIcon />
+        </ListItemIcon>
+        <ListItemText primary="PCM" />
       </ListItem>
     </Link>
   </div>
