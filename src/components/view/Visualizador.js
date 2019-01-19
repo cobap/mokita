@@ -3,19 +3,14 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
 // Components
-import ListaTurbinas from './../status/ListaTurbinas';
+import TabelaSR from './../tabela/TabelaSR';
 import Header from './../header/Header';
 
 // Material UI
 import { withStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
-// import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
 
 import fire from './../../fire';
-
-// var database = fire.database();
-// var dados_turbina = database.ref("UDV")
 
 const styles = theme => ({
   root: {
@@ -40,33 +35,12 @@ class CenteredGrid extends Component {
     super(props);
 
     this.state = {
-      isLoadingTurbineStatus: false,
-      status_turbinas: [],
-      _status_turbinas_backup: [],
-      windfarm: '',
-      filtro: 5,
+        windfarm: ''
     };
 
-    // var handleMudancaWindfarm = this.handleMudancaWindfarm.bind(this);
-    // var handleMudancaStatus = this.handleMudancaStatus.bind(this);
   }
 
-  atualizaTurbinas(novo_parque) {
-    var ref = fire.database().ref(novo_parque);
-    ref.once('value').then((snapshot) => {
-        this.setState({ status_turbinas: snapshot.val(), isLoadingTurbineStatus: false, windfarm: novo_parque });
-    });
-  }
-
-  componentWillMount() {
-      // this.atualizaTurbinas()
-  }
-
-  componentDidMount() {
-      // setInterval(this.atualizaTurbinas, 50000);
-  }
-
-  handleMudancaWindfarm(novo_parque) { this.atualizaTurbinas(novo_parque) }
+  handleMudancaWindfarm(novo_parque) { this.setState({ windfarm: novo_parque }) }
   handleMudancaStatus(novo_status) { this.setState({ filtro: novo_status, status_turbinas: this.state._status_turbinas_backup.filter(turbina => turbina.currentState === novo_status)}); }
 
   render() {
@@ -79,19 +53,12 @@ class CenteredGrid extends Component {
         <Header handleMudancaWindfarm = {handleMudancaWindfarm.bind(this)} handleMudancaStatus = {handleMudancaStatus.bind(this)} windfarm={this.state.windfarm} />
 
         <Grid container justify="center">
-          {/* Status Turbinas */}
-          {/* <Grid item xs={12} lg={12}> <TurbinesStatus turbines={this.state.status_turbinas} /> </Grid> */}
-          {/* <Grid item xs={12} lg={12}> <TabelaStatus turbines={this.state.status_turbinas} /> </Grid> */}
-          <Grid item xs={12} lg={12}> <ListaTurbinas turbines={this.state.status_turbinas} windfarm={this.state.windfarm} /> </Grid>
+          <Grid item xs={12} lg={12}> <TabelaSR windfarm={this.state.windfarm} /> </Grid>
         </Grid>
 
       </div>
     );
   }
 }
-
-CenteredGrid.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(CenteredGrid);

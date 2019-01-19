@@ -78,24 +78,11 @@ class ListaTurbinas extends React.Component {
   handleCriacaoSR(someArg) {
     console.log('Criar SR para: ' + someArg);
     console.log(someArg);
+    someArg.windfarm = this.props.windfarm
     console.log(someArg.key);
     fire.database().ref('servicerequest').push( someArg );
     this.setState({turbina_foi_selecionada:false, openResultadoSR:true, codigo_sr:someArg.key });
   }
-
-  handleSubmit = (event) => {
-        event.preventDefault();
-        this.setState({ open: true });
-        fire.database()
-          .ref('debrief').push(
-            { numero_sr: this.state.numero_sr, empresa: this.state.empresa, inicio_troubleshoot: this.state.inicio_troubleshoot, inicio_reparo: this.state.inicio_reparo, fim_reparo: this.state.fim_reparo, tipo_hora: this.state.tipo_hora, complexo_eolico: this.state.complexo_eolico, nome_tecnico: this.state.nome_tecnico, data_do_debrief: this.state.data_do_debrief },
-            function(error) {
-              if(error) { console.log(error) }
-              else { console.log('Dados salvos com sucesso!') }
-            }
-          );
-        this.setState({ numero_sr: '' });
-  };
 
   render() {
     const { classes } = this.props;

@@ -88,8 +88,8 @@ class CriaSR extends React.Component {
       _sr.wtg = this.props.turbina.wtgName;
       _sr.serial = this.props.turbina.serial;
       _sr.falha = this.state.falha;
-      _sr.data = new Date().toISOString().substring(0,16).replace(':', '').replace('T', '').replace(new RegExp('-', 'g'), '')
-      _sr.key = _sr.wtg + _sr.data;
+      _sr.data = new Date().toISOString().substring(0,16)
+      _sr.key = _sr.wtg + _sr.data.replace(':', '').replace('T', '').replace(new RegExp('-', 'g'), '');
       this.props.handleCriacaoSR(_sr);
     }
   }
