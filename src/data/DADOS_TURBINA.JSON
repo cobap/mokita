@@ -1694,566 +1694,566 @@
       }
         ],
     "CALDEIRAO" : [
-    {
-      "currentState" : 1,
-      "fullName" : "SA01",
-      "key" : "SA01",
-      "serial" : "1050150002",
-      "siteID" : 92090,
-      "wtgName" : "SA01"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA02",
-      "key" : "SA02",
-      "serial" : "1050150003",
-      "siteID" : 92090,
-      "wtgName" : "SA02"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA03",
-      "key" : "SA03",
-      "serial" : "1050150004",
-      "siteID" : 92090,
-      "wtgName" : "SA03"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA04",
-      "key" : "SA04",
-      "serial" : "1050150005",
-      "siteID" : 92090,
-      "wtgName" : "SA04"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA05",
-      "key" : "SA05",
-      "serial" : "1050150006",
-      "siteID" : 92090,
-      "wtgName" : "SA05"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA06",
-      "key" : "SA06",
-      "serial" : "1050150007",
-      "siteID" : 92090,
-      "wtgName" : "SA06"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA07",
-      "key" : "SA07",
-      "serial" : "1050150008",
-      "siteID" : 92090,
-      "wtgName" : "SA07"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA08",
-      "key" : "SA08",
-      "serial" : "1050150009",
-      "siteID" : 92090,
-      "wtgName" : "SA08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA09",
-      "key" : "SA09",
-      "serial" : "1050150010",
-      "siteID" : 92090,
-      "wtgName" : "SA09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA10",
-      "key" : "SA10",
-      "serial" : "1050150011",
-      "siteID" : 92090,
-      "wtgName" : "SA10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SA11",
-      "key" : "SA11",
-      "serial" : "1050150012",
-      "siteID" : 92090,
-      "wtgName" : "SA11"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAD08",
-      "key" : "SAD08",
-      "serial" : "1050190002",
-      "siteID" : 20222,
-      "wtgName" : "SAD08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAD09",
-      "key" : "SAD09",
-      "serial" : "1050190003",
-      "siteID" : 20222,
-      "wtgName" : "SAD09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAD10",
-      "key" : "SAD10",
-      "serial" : "1050190004",
-      "siteID" : 20222,
-      "wtgName" : "SAD10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAD11",
-      "key" : "SAD11",
-      "serial" : "1050190005",
-      "siteID" : 20222,
-      "wtgName" : "SAD11"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL01",
-      "key" : "SAL01",
-      "serial" : "1050190006",
-      "siteID" : 20222,
-      "wtgName" : "SAL01"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL02",
-      "key" : "SAL02",
-      "serial" : "1050190007",
-      "siteID" : 20222,
-      "wtgName" : "SAL02"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL03",
-      "key" : "SAL03",
-      "serial" : "1050190008",
-      "siteID" : 20222,
-      "wtgName" : "SAL03"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL04",
-      "key" : "SAL04",
-      "serial" : "1050190009",
-      "siteID" : 20222,
-      "wtgName" : "SAL04"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL05",
-      "key" : "SAL05",
-      "serial" : "1050190010",
-      "siteID" : 20222,
-      "wtgName" : "SAL05"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL06",
-      "key" : "SAL06",
-      "serial" : "1050190011",
-      "siteID" : 20222,
-      "wtgName" : "SAL06"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL07",
-      "key" : "SAL07",
-      "serial" : "1050190012",
-      "siteID" : 20222,
-      "wtgName" : "SAL07"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL08",
-      "key" : "SAL08",
-      "serial" : "1050190013",
-      "siteID" : 20222,
-      "wtgName" : "SAL08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL09",
-      "key" : "SAL09",
-      "serial" : "1050190014",
-      "siteID" : 20222,
-      "wtgName" : "SAL09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL10",
-      "key" : "SAL10",
-      "serial" : "1050190015",
-      "siteID" : 20222,
-      "wtgName" : "SAL10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SAL11",
-      "key" : "SAL11",
-      "serial" : "1050190016",
-      "siteID" : 20222,
-      "wtgName" : "SAL11"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB01",
-      "key" : "SB01",
-      "serial" : "1050150013",
-      "siteID" : 92090,
-      "wtgName" : "SB01"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB02",
-      "key" : "SB02",
-      "serial" : "1050150014",
-      "siteID" : 92090,
-      "wtgName" : "SB02"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB03",
-      "key" : "SB03",
-      "serial" : "1050150015",
-      "siteID" : 92090,
-      "wtgName" : "SB03"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB04",
-      "key" : "SB04",
-      "serial" : "1050150016",
-      "siteID" : 92090,
-      "wtgName" : "SB04"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB05",
-      "key" : "SB05",
-      "serial" : "1050150017",
-      "siteID" : 92090,
-      "wtgName" : "SB05"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB06",
-      "key" : "SB06",
-      "serial" : "1050150018",
-      "siteID" : 92090,
-      "wtgName" : "SB06"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB07",
-      "key" : "SB07",
-      "serial" : "1050150019",
-      "siteID" : 92090,
-      "wtgName" : "SB07"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB08",
-      "key" : "SB08",
-      "serial" : "1050150020",
-      "siteID" : 92090,
-      "wtgName" : "SB08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB09",
-      "key" : "SB09",
-      "serial" : "1050150021",
-      "siteID" : 92090,
-      "wtgName" : "SB09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB10",
-      "key" : "SB10",
-      "serial" : "1050150022",
-      "siteID" : 92090,
-      "wtgName" : "SB10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SB11",
-      "key" : "SB11",
-      "serial" : "1050150023",
-      "siteID" : 92090,
-      "wtgName" : "SB11"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED01",
-      "key" : "SED01",
-      "serial" : "1050150024",
-      "siteID" : 92090,
-      "wtgName" : "SED01"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED02",
-      "key" : "SED02",
-      "serial" : "1050150025",
-      "siteID" : 92090,
-      "wtgName" : "SED02"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED03",
-      "key" : "SED03",
-      "serial" : "1050150026",
-      "siteID" : 92090,
-      "wtgName" : "SED03"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED04",
-      "key" : "SED04",
-      "serial" : "1050150027",
-      "siteID" : 92090,
-      "wtgName" : "SED04"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED05",
-      "key" : "SED05",
-      "serial" : "1050150028",
-      "siteID" : 92090,
-      "wtgName" : "SED05"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED06",
-      "key" : "SED06",
-      "serial" : "1050150029",
-      "siteID" : 92090,
-      "wtgName" : "SED06"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED07",
-      "key" : "SED07",
-      "serial" : "1050150030",
-      "siteID" : 92090,
-      "wtgName" : "SED07"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED08",
-      "key" : "SED08",
-      "serial" : "1050150031",
-      "siteID" : 92090,
-      "wtgName" : "SED08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED09",
-      "key" : "SED09",
-      "serial" : "1050150032",
-      "siteID" : 92090,
-      "wtgName" : "SED09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED10",
-      "key" : "SED10",
-      "serial" : "1050150033",
-      "siteID" : 92090,
-      "wtgName" : "SED10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SED11",
-      "key" : "SED11",
-      "serial" : "1050150034",
-      "siteID" : 92090,
-      "wtgName" : "SED11"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF01",
-      "key" : "SF01",
-      "serial" : "1050150035",
-      "siteID" : 92090,
-      "wtgName" : "SF01"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF02",
-      "key" : "SF02",
-      "serial" : "1050150036",
-      "siteID" : 92090,
-      "wtgName" : "SF02"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF03",
-      "key" : "SF03",
-      "serial" : "1050150037",
-      "siteID" : 92090,
-      "wtgName" : "SF03"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF04",
-      "key" : "SF04",
-      "serial" : "1050150038",
-      "siteID" : 92090,
-      "wtgName" : "SF04"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF05",
-      "key" : "SF05",
-      "serial" : "1050150039",
-      "siteID" : 92090,
-      "wtgName" : "SF05"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF06",
-      "key" : "SF06",
-      "serial" : "1050150040",
-      "siteID" : 92090,
-      "wtgName" : "SF06"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF07",
-      "key" : "SF07",
-      "serial" : "1050150041",
-      "siteID" : 92090,
-      "wtgName" : "SF07"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF08",
-      "key" : "SF08",
-      "serial" : "1050150042",
-      "siteID" : 92090,
-      "wtgName" : "SF08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF09",
-      "key" : "SF09",
-      "serial" : "1050150043",
-      "siteID" : 92090,
-      "wtgName" : "SF09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF10",
-      "key" : "SF10",
-      "serial" : "1050150044",
-      "siteID" : 92090,
-      "wtgName" : "SF10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SF11",
-      "key" : "SF11",
-      "serial" : "1050150045",
-      "siteID" : 92090,
-      "wtgName" : "SF11"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR01",
-      "key" : "SR01",
-      "serial" : "1050190039",
-      "siteID" : 20222,
-      "wtgName" : "SR01"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR02",
-      "key" : "SR02",
-      "serial" : "1050190040",
-      "siteID" : 20222,
-      "wtgName" : "SR02"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR03",
-      "key" : "SR03",
-      "serial" : "1050190041",
-      "siteID" : 20222,
-      "wtgName" : "SR03"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR04",
-      "key" : "SR04",
-      "serial" : "1050190042",
-      "siteID" : 20222,
-      "wtgName" : "SR04"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR05",
-      "key" : "SR05",
-      "serial" : "1050190043",
-      "siteID" : 20222,
-      "wtgName" : "SR05"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR06",
-      "key" : "SR06",
-      "serial" : "1050190044",
-      "siteID" : 20222,
-      "wtgName" : "SR06"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR07",
-      "key" : "SR07",
-      "serial" : "1050190045",
-      "siteID" : 20222,
-      "wtgName" : "SR07"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR08",
-      "key" : "SR08",
-      "serial" : "1050190046",
-      "siteID" : 20222,
-      "wtgName" : "SR08"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR09",
-      "key" : "SR09",
-      "serial" : "1050190047",
-      "siteID" : 20222,
-      "wtgName" : "SR09"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR10",
-      "key" : "SR10",
-      "serial" : "1050190048",
-      "siteID" : 20222,
-      "wtgName" : "SR10"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "SR11",
-      "key" : "SR11",
-      "siteID" : 20222,
-      "wtgName" : "SR11"
-    }
-  ],
+        {
+          "currentState" : 1,
+          "fullName" : "SA01",
+          "key" : "SA01",
+          "serial" : "1050150002",
+          "siteID" : 92090,
+          "wtgName" : "SA01"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA02",
+          "key" : "SA02",
+          "serial" : "1050150003",
+          "siteID" : 92090,
+          "wtgName" : "SA02"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA03",
+          "key" : "SA03",
+          "serial" : "1050150004",
+          "siteID" : 92090,
+          "wtgName" : "SA03"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA04",
+          "key" : "SA04",
+          "serial" : "1050150005",
+          "siteID" : 92090,
+          "wtgName" : "SA04"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA05",
+          "key" : "SA05",
+          "serial" : "1050150006",
+          "siteID" : 92090,
+          "wtgName" : "SA05"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA06",
+          "key" : "SA06",
+          "serial" : "1050150007",
+          "siteID" : 92090,
+          "wtgName" : "SA06"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA07",
+          "key" : "SA07",
+          "serial" : "1050150008",
+          "siteID" : 92090,
+          "wtgName" : "SA07"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA08",
+          "key" : "SA08",
+          "serial" : "1050150009",
+          "siteID" : 92090,
+          "wtgName" : "SA08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA09",
+          "key" : "SA09",
+          "serial" : "1050150010",
+          "siteID" : 92090,
+          "wtgName" : "SA09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA10",
+          "key" : "SA10",
+          "serial" : "1050150011",
+          "siteID" : 92090,
+          "wtgName" : "SA10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SA11",
+          "key" : "SA11",
+          "serial" : "1050150012",
+          "siteID" : 92090,
+          "wtgName" : "SA11"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAD08",
+          "key" : "SAD08",
+          "serial" : "1050190002",
+          "siteID" : 20222,
+          "wtgName" : "SAD08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAD09",
+          "key" : "SAD09",
+          "serial" : "1050190003",
+          "siteID" : 20222,
+          "wtgName" : "SAD09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAD10",
+          "key" : "SAD10",
+          "serial" : "1050190004",
+          "siteID" : 20222,
+          "wtgName" : "SAD10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAD11",
+          "key" : "SAD11",
+          "serial" : "1050190005",
+          "siteID" : 20222,
+          "wtgName" : "SAD11"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL01",
+          "key" : "SAL01",
+          "serial" : "1050190006",
+          "siteID" : 20222,
+          "wtgName" : "SAL01"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL02",
+          "key" : "SAL02",
+          "serial" : "1050190007",
+          "siteID" : 20222,
+          "wtgName" : "SAL02"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL03",
+          "key" : "SAL03",
+          "serial" : "1050190008",
+          "siteID" : 20222,
+          "wtgName" : "SAL03"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL04",
+          "key" : "SAL04",
+          "serial" : "1050190009",
+          "siteID" : 20222,
+          "wtgName" : "SAL04"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL05",
+          "key" : "SAL05",
+          "serial" : "1050190010",
+          "siteID" : 20222,
+          "wtgName" : "SAL05"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL06",
+          "key" : "SAL06",
+          "serial" : "1050190011",
+          "siteID" : 20222,
+          "wtgName" : "SAL06"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL07",
+          "key" : "SAL07",
+          "serial" : "1050190012",
+          "siteID" : 20222,
+          "wtgName" : "SAL07"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL08",
+          "key" : "SAL08",
+          "serial" : "1050190013",
+          "siteID" : 20222,
+          "wtgName" : "SAL08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL09",
+          "key" : "SAL09",
+          "serial" : "1050190014",
+          "siteID" : 20222,
+          "wtgName" : "SAL09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL10",
+          "key" : "SAL10",
+          "serial" : "1050190015",
+          "siteID" : 20222,
+          "wtgName" : "SAL10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SAL11",
+          "key" : "SAL11",
+          "serial" : "1050190016",
+          "siteID" : 20222,
+          "wtgName" : "SAL11"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB01",
+          "key" : "SB01",
+          "serial" : "1050150013",
+          "siteID" : 92090,
+          "wtgName" : "SB01"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB02",
+          "key" : "SB02",
+          "serial" : "1050150014",
+          "siteID" : 92090,
+          "wtgName" : "SB02"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB03",
+          "key" : "SB03",
+          "serial" : "1050150015",
+          "siteID" : 92090,
+          "wtgName" : "SB03"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB04",
+          "key" : "SB04",
+          "serial" : "1050150016",
+          "siteID" : 92090,
+          "wtgName" : "SB04"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB05",
+          "key" : "SB05",
+          "serial" : "1050150017",
+          "siteID" : 92090,
+          "wtgName" : "SB05"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB06",
+          "key" : "SB06",
+          "serial" : "1050150018",
+          "siteID" : 92090,
+          "wtgName" : "SB06"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB07",
+          "key" : "SB07",
+          "serial" : "1050150019",
+          "siteID" : 92090,
+          "wtgName" : "SB07"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB08",
+          "key" : "SB08",
+          "serial" : "1050150020",
+          "siteID" : 92090,
+          "wtgName" : "SB08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB09",
+          "key" : "SB09",
+          "serial" : "1050150021",
+          "siteID" : 92090,
+          "wtgName" : "SB09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB10",
+          "key" : "SB10",
+          "serial" : "1050150022",
+          "siteID" : 92090,
+          "wtgName" : "SB10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SB11",
+          "key" : "SB11",
+          "serial" : "1050150023",
+          "siteID" : 92090,
+          "wtgName" : "SB11"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED01",
+          "key" : "SED01",
+          "serial" : "1050150024",
+          "siteID" : 92090,
+          "wtgName" : "SED01"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED02",
+          "key" : "SED02",
+          "serial" : "1050150025",
+          "siteID" : 92090,
+          "wtgName" : "SED02"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED03",
+          "key" : "SED03",
+          "serial" : "1050150026",
+          "siteID" : 92090,
+          "wtgName" : "SED03"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED04",
+          "key" : "SED04",
+          "serial" : "1050150027",
+          "siteID" : 92090,
+          "wtgName" : "SED04"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED05",
+          "key" : "SED05",
+          "serial" : "1050150028",
+          "siteID" : 92090,
+          "wtgName" : "SED05"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED06",
+          "key" : "SED06",
+          "serial" : "1050150029",
+          "siteID" : 92090,
+          "wtgName" : "SED06"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED07",
+          "key" : "SED07",
+          "serial" : "1050150030",
+          "siteID" : 92090,
+          "wtgName" : "SED07"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED08",
+          "key" : "SED08",
+          "serial" : "1050150031",
+          "siteID" : 92090,
+          "wtgName" : "SED08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED09",
+          "key" : "SED09",
+          "serial" : "1050150032",
+          "siteID" : 92090,
+          "wtgName" : "SED09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED10",
+          "key" : "SED10",
+          "serial" : "1050150033",
+          "siteID" : 92090,
+          "wtgName" : "SED10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SED11",
+          "key" : "SED11",
+          "serial" : "1050150034",
+          "siteID" : 92090,
+          "wtgName" : "SED11"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF01",
+          "key" : "SF01",
+          "serial" : "1050150035",
+          "siteID" : 92090,
+          "wtgName" : "SF01"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF02",
+          "key" : "SF02",
+          "serial" : "1050150036",
+          "siteID" : 92090,
+          "wtgName" : "SF02"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF03",
+          "key" : "SF03",
+          "serial" : "1050150037",
+          "siteID" : 92090,
+          "wtgName" : "SF03"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF04",
+          "key" : "SF04",
+          "serial" : "1050150038",
+          "siteID" : 92090,
+          "wtgName" : "SF04"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF05",
+          "key" : "SF05",
+          "serial" : "1050150039",
+          "siteID" : 92090,
+          "wtgName" : "SF05"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF06",
+          "key" : "SF06",
+          "serial" : "1050150040",
+          "siteID" : 92090,
+          "wtgName" : "SF06"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF07",
+          "key" : "SF07",
+          "serial" : "1050150041",
+          "siteID" : 92090,
+          "wtgName" : "SF07"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF08",
+          "key" : "SF08",
+          "serial" : "1050150042",
+          "siteID" : 92090,
+          "wtgName" : "SF08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF09",
+          "key" : "SF09",
+          "serial" : "1050150043",
+          "siteID" : 92090,
+          "wtgName" : "SF09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF10",
+          "key" : "SF10",
+          "serial" : "1050150044",
+          "siteID" : 92090,
+          "wtgName" : "SF10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SF11",
+          "key" : "SF11",
+          "serial" : "1050150045",
+          "siteID" : 92090,
+          "wtgName" : "SF11"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR01",
+          "key" : "SR01",
+          "serial" : "1050190039",
+          "siteID" : 20222,
+          "wtgName" : "SR01"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR02",
+          "key" : "SR02",
+          "serial" : "1050190040",
+          "siteID" : 20222,
+          "wtgName" : "SR02"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR03",
+          "key" : "SR03",
+          "serial" : "1050190041",
+          "siteID" : 20222,
+          "wtgName" : "SR03"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR04",
+          "key" : "SR04",
+          "serial" : "1050190042",
+          "siteID" : 20222,
+          "wtgName" : "SR04"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR05",
+          "key" : "SR05",
+          "serial" : "1050190043",
+          "siteID" : 20222,
+          "wtgName" : "SR05"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR06",
+          "key" : "SR06",
+          "serial" : "1050190044",
+          "siteID" : 20222,
+          "wtgName" : "SR06"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR07",
+          "key" : "SR07",
+          "serial" : "1050190045",
+          "siteID" : 20222,
+          "wtgName" : "SR07"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR08",
+          "key" : "SR08",
+          "serial" : "1050190046",
+          "siteID" : 20222,
+          "wtgName" : "SR08"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR09",
+          "key" : "SR09",
+          "serial" : "1050190047",
+          "siteID" : 20222,
+          "wtgName" : "SR09"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR10",
+          "key" : "SR10",
+          "serial" : "1050190048",
+          "siteID" : 20222,
+          "wtgName" : "SR10"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "SR11",
+          "key" : "SR11",
+          "siteID" : 20222,
+          "wtgName" : "SR11"
+        }
+    ],
   "CAMPOLARGO" : [
     {
       "currentState" : 1,
@@ -4602,1062 +4602,1062 @@
     }
   ],
   "CHAPADAII" : [
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 001",
-      "key" : "AUG3-001",
-      "serial" : "18141864",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 002",
-      "key" : "AUG3-002",
-      "serial" : "18141865",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 003",
-      "key" : "AUG3-003",
-      "serial" : "18141866",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 004",
-      "key" : "AUG3-004",
-      "serial" : "18141867",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 005",
-      "key" : "AUG3-005",
-      "serial" : "18141868",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 006",
-      "key" : "AUG3-006",
-      "serial" : "18141869",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 007",
-      "key" : "AUG3-007",
-      "serial" : "18141870",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 008",
-      "key" : "AUG3-008",
-      "serial" : "18141871",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 009",
-      "key" : "AUG3-009",
-      "serial" : "18141872",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 010",
-      "key" : "AUG3-010",
-      "serial" : "18141873",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 011",
-      "key" : "AUG3-011",
-      "serial" : "18141874",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 012",
-      "key" : "AUG3-012",
-      "serial" : "18141875",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 013",
-      "key" : "AUG3-013",
-      "serial" : "18141876",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 014",
-      "key" : "AUG3-014",
-      "serial" : "18141877",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 015",
-      "key" : "AUG3-015",
-      "serial" : "18141878",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto III 016",
-      "key" : "AUG3-016",
-      "serial" : "18141879",
-      "siteID" : 2119,
-      "wtgName" : "AUG3-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 001",
-      "key" : "AUG4-001",
-      "serial" : "17141448",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 002",
-      "key" : "AUG4-002",
-      "serial" : "17141449",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 003",
-      "key" : "AUG4-003",
-      "serial" : "17141450",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 004",
-      "key" : "AUG4-004",
-      "serial" : "17141451",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 005",
-      "key" : "AUG4-005",
-      "serial" : "17141452",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 006",
-      "key" : "AUG4-006",
-      "serial" : "17141453",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 007",
-      "key" : "AUG4-007",
-      "serial" : "17141454",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 008",
-      "key" : "AUG4-008",
-      "serial" : "17141455",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 009",
-      "key" : "AUG4-009",
-      "serial" : "17141456",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 010",
-      "key" : "AUG4-010",
-      "serial" : "17141457",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 011",
-      "key" : "AUG4-011",
-      "serial" : "17141458",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 012",
-      "key" : "AUG4-012",
-      "serial" : "17141459",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 013",
-      "key" : "AUG4-013",
-      "serial" : "17141460",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 014",
-      "key" : "AUG4-014",
-      "serial" : "17141461",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 015",
-      "key" : "AUG4-015",
-      "serial" : "17141462",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 016",
-      "key" : "AUG4-016",
-      "serial" : "17141463",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto IV 017",
-      "key" : "AUG4-017",
-      "serial" : "17141464",
-      "siteID" : 2118,
-      "wtgName" : "AUG4-017"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 001",
-      "key" : "AUG5-001",
-      "serial" : "18141848",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 002",
-      "key" : "AUG5-002",
-      "serial" : "18141849",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 003",
-      "key" : "AUG5-003",
-      "serial" : "18141850",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 004",
-      "key" : "AUG5-004",
-      "serial" : "18141851",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 005",
-      "key" : "AUG5-005",
-      "serial" : "18141852",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 006",
-      "key" : "AUG5-006",
-      "serial" : "18141853",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 007",
-      "key" : "AUG5-007",
-      "serial" : "18141854",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 008",
-      "key" : "AUG5-008",
-      "serial" : "18141855",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 009",
-      "key" : "AUG5-009",
-      "serial" : "18141856",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 010",
-      "key" : "AUG5-010",
-      "serial" : "18141857",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 011",
-      "key" : "AUG5-011",
-      "serial" : "18141858",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 012",
-      "key" : "AUG5-012",
-      "serial" : "18141859",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 013",
-      "key" : "AUG5-013",
-      "serial" : "18141860",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 014",
-      "key" : "AUG5-014",
-      "serial" : "18141861",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 015",
-      "key" : "AUG5-015",
-      "serial" : "18141862",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santo Augusto V 016",
-      "key" : "AUG5-016",
-      "serial" : "18141863",
-      "siteID" : 2119,
-      "wtgName" : "AUG5-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 001",
-      "key" : "JOA1-001",
-      "serial" : "17141381",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 002",
-      "key" : "JOA1-002",
-      "serial" : "17141382",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 003",
-      "key" : "JOA1-003",
-      "serial" : "17141383",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 004",
-      "key" : "JOA1-004",
-      "serial" : "17141384",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 005",
-      "key" : "JOA1-005",
-      "serial" : "17141385",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 006",
-      "key" : "JOA1-006",
-      "serial" : "17141386",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 007",
-      "key" : "JOA1-007",
-      "serial" : "17141387",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 008",
-      "key" : "JOA1-008",
-      "serial" : "17141388",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 009",
-      "key" : "JOA1-009",
-      "serial" : "17141389",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 010",
-      "key" : "JOA1-010",
-      "serial" : "17141390",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 011",
-      "key" : "JOA1-011",
-      "serial" : "17141391",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 012",
-      "key" : "JOA1-012",
-      "serial" : "17141392",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 013",
-      "key" : "JOA1-013",
-      "serial" : "17141393",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 014",
-      "key" : "JOA1-014",
-      "serial" : "17141394",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 015",
-      "key" : "JOA1-015",
-      "serial" : "17141395",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 016",
-      "key" : "JOA1-016",
-      "serial" : "17141396",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana I 017",
-      "key" : "JOA1-017",
-      "serial" : "17141397",
-      "siteID" : 2118,
-      "wtgName" : "JOA1-017"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 001",
-      "key" : "JOA3-001",
-      "serial" : "18141465",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 002",
-      "key" : "JOA3-002",
-      "serial" : "18141466",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 003",
-      "key" : "JOA3-003",
-      "serial" : "18141467",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 004",
-      "key" : "JOA3-004",
-      "serial" : "18141468",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 005",
-      "key" : "JOA3-005",
-      "serial" : "18141469",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 006",
-      "key" : "JOA3-006",
-      "serial" : "18141470",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 007",
-      "key" : "JOA3-007",
-      "serial" : "18141471",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 008",
-      "key" : "JOA3-008",
-      "serial" : "18141472",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 009",
-      "key" : "JOA3-009",
-      "serial" : "18141473",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 010",
-      "key" : "JOA3-010",
-      "serial" : "18141474",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 011",
-      "key" : "JOA3-011",
-      "serial" : "18141475",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 012",
-      "key" : "JOA3-012",
-      "serial" : "18141476",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 013",
-      "key" : "JOA3-013",
-      "serial" : "18141477",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 014",
-      "key" : "JOA3-014",
-      "serial" : "18141478",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 015",
-      "key" : "JOA3-015",
-      "serial" : "18141479",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana III 016",
-      "key" : "JOA3-016",
-      "serial" : "18141480",
-      "siteID" : 2118,
-      "wtgName" : "JOA3-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 001",
-      "key" : "JOA4-001",
-      "serial" : "17141398",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 002",
-      "key" : "JOA4-002",
-      "serial" : "17141399",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 003",
-      "key" : "JOA4-003",
-      "serial" : "17141400",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 004",
-      "key" : "JOA4-004",
-      "serial" : "17141401",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 005",
-      "key" : "JOA4-005",
-      "serial" : "17141402",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 006",
-      "key" : "JOA4-006",
-      "serial" : "17141403",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 007",
-      "key" : "JOA4-007",
-      "serial" : "17141404",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 008",
-      "key" : "JOA4-008",
-      "serial" : "17141405",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 009",
-      "key" : "JOA4-009",
-      "serial" : "17141406",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 010",
-      "key" : "JOA4-010",
-      "serial" : "17141407",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 011",
-      "key" : "JOA4-011",
-      "serial" : "17141408",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 012",
-      "key" : "JOA4-012",
-      "serial" : "17141409",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 013",
-      "key" : "JOA4-013",
-      "serial" : "17141410",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 014",
-      "key" : "JOA4-014",
-      "serial" : "17141411",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 015",
-      "key" : "JOA4-015",
-      "serial" : "17141412",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana IV 016",
-      "key" : "JOA4-016",
-      "serial" : "17141413",
-      "siteID" : 2118,
-      "wtgName" : "JOA4-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 001",
-      "key" : "JOA5-001",
-      "serial" : "17141414",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 002",
-      "key" : "JOA5-002",
-      "serial" : "17141415",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 003",
-      "key" : "JOA5-003",
-      "serial" : "17141416",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 004",
-      "key" : "JOA5-004",
-      "serial" : "17141417",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 005",
-      "key" : "JOA5-005",
-      "serial" : "17141418",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 006",
-      "key" : "JOA5-006",
-      "serial" : "17141419",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 007",
-      "key" : "JOA5-007",
-      "serial" : "17141420",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 008",
-      "key" : "JOA5-008",
-      "serial" : "17141421",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 009",
-      "key" : "JOA5-009",
-      "serial" : "17141422",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 010",
-      "key" : "JOA5-010",
-      "serial" : "17141423",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 011",
-      "key" : "JOA5-011",
-      "serial" : "17141424",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 012",
-      "key" : "JOA5-012",
-      "serial" : "17141425",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 013",
-      "key" : "JOA5-013",
-      "serial" : "17141426",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 014",
-      "key" : "JOA5-014",
-      "serial" : "17141427",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 015",
-      "key" : "JOA5-015",
-      "serial" : "17141428",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 016",
-      "key" : "JOA5-016",
-      "serial" : "17141429",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana V 017",
-      "key" : "JOA5-017",
-      "serial" : "17141430",
-      "siteID" : 2118,
-      "wtgName" : "JOA5-017"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 001",
-      "key" : "JOA7-001",
-      "serial" : "17141431",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-001"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 002",
-      "key" : "JOA7-002",
-      "serial" : "17141432",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-002"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 003",
-      "key" : "JOA7-003",
-      "serial" : "17141433",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-003"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 004",
-      "key" : "JOA7-004",
-      "serial" : "17141434",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-004"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 005",
-      "key" : "JOA7-005",
-      "serial" : "17141435",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-005"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 006",
-      "key" : "JOA7-006",
-      "serial" : "17141436",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-006"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 007",
-      "key" : "JOA7-007",
-      "serial" : "17141437",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-007"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 008",
-      "key" : "JOA7-008",
-      "serial" : "17141438",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-008"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 009",
-      "key" : "JOA7-009",
-      "serial" : "17141439",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-009"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 010",
-      "key" : "JOA7-010",
-      "serial" : "17141440",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-010"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 011",
-      "key" : "JOA7-011",
-      "serial" : "17141441",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-011"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 012",
-      "key" : "JOA7-012",
-      "serial" : "17141442",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-012"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 013",
-      "key" : "JOA7-013",
-      "serial" : "17141443",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-013"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 014",
-      "key" : "JOA7-014",
-      "serial" : "17141444",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-014"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 015",
-      "key" : "JOA7-015",
-      "serial" : "17141445",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-015"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 016",
-      "key" : "JOA7-016",
-      "serial" : "17141446",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-016"
-    },
-    {
-      "currentState" : 1,
-      "fullName" : "Santa Joana VII 017",
-      "key" : "JOA7-017",
-      "serial" : "17141447",
-      "siteID" : 2118,
-      "wtgName" : "JOA7-017"
-    }
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 001",
+          "key" : "AUG3-001",
+          "serial" : "18141864",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 002",
+          "key" : "AUG3-002",
+          "serial" : "18141865",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 003",
+          "key" : "AUG3-003",
+          "serial" : "18141866",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 004",
+          "key" : "AUG3-004",
+          "serial" : "18141867",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 005",
+          "key" : "AUG3-005",
+          "serial" : "18141868",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 006",
+          "key" : "AUG3-006",
+          "serial" : "18141869",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 007",
+          "key" : "AUG3-007",
+          "serial" : "18141870",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 008",
+          "key" : "AUG3-008",
+          "serial" : "18141871",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 009",
+          "key" : "AUG3-009",
+          "serial" : "18141872",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 010",
+          "key" : "AUG3-010",
+          "serial" : "18141873",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 011",
+          "key" : "AUG3-011",
+          "serial" : "18141874",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 012",
+          "key" : "AUG3-012",
+          "serial" : "18141875",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 013",
+          "key" : "AUG3-013",
+          "serial" : "18141876",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 014",
+          "key" : "AUG3-014",
+          "serial" : "18141877",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 015",
+          "key" : "AUG3-015",
+          "serial" : "18141878",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto III 016",
+          "key" : "AUG3-016",
+          "serial" : "18141879",
+          "siteID" : 2119,
+          "wtgName" : "AUG3-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 001",
+          "key" : "AUG4-001",
+          "serial" : "17141448",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 002",
+          "key" : "AUG4-002",
+          "serial" : "17141449",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 003",
+          "key" : "AUG4-003",
+          "serial" : "17141450",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 004",
+          "key" : "AUG4-004",
+          "serial" : "17141451",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 005",
+          "key" : "AUG4-005",
+          "serial" : "17141452",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 006",
+          "key" : "AUG4-006",
+          "serial" : "17141453",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 007",
+          "key" : "AUG4-007",
+          "serial" : "17141454",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 008",
+          "key" : "AUG4-008",
+          "serial" : "17141455",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 009",
+          "key" : "AUG4-009",
+          "serial" : "17141456",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 010",
+          "key" : "AUG4-010",
+          "serial" : "17141457",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 011",
+          "key" : "AUG4-011",
+          "serial" : "17141458",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 012",
+          "key" : "AUG4-012",
+          "serial" : "17141459",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 013",
+          "key" : "AUG4-013",
+          "serial" : "17141460",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 014",
+          "key" : "AUG4-014",
+          "serial" : "17141461",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 015",
+          "key" : "AUG4-015",
+          "serial" : "17141462",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 016",
+          "key" : "AUG4-016",
+          "serial" : "17141463",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto IV 017",
+          "key" : "AUG4-017",
+          "serial" : "17141464",
+          "siteID" : 2118,
+          "wtgName" : "AUG4-017"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 001",
+          "key" : "AUG5-001",
+          "serial" : "18141848",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 002",
+          "key" : "AUG5-002",
+          "serial" : "18141849",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 003",
+          "key" : "AUG5-003",
+          "serial" : "18141850",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 004",
+          "key" : "AUG5-004",
+          "serial" : "18141851",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 005",
+          "key" : "AUG5-005",
+          "serial" : "18141852",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 006",
+          "key" : "AUG5-006",
+          "serial" : "18141853",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 007",
+          "key" : "AUG5-007",
+          "serial" : "18141854",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 008",
+          "key" : "AUG5-008",
+          "serial" : "18141855",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 009",
+          "key" : "AUG5-009",
+          "serial" : "18141856",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 010",
+          "key" : "AUG5-010",
+          "serial" : "18141857",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 011",
+          "key" : "AUG5-011",
+          "serial" : "18141858",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 012",
+          "key" : "AUG5-012",
+          "serial" : "18141859",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 013",
+          "key" : "AUG5-013",
+          "serial" : "18141860",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 014",
+          "key" : "AUG5-014",
+          "serial" : "18141861",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 015",
+          "key" : "AUG5-015",
+          "serial" : "18141862",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santo Augusto V 016",
+          "key" : "AUG5-016",
+          "serial" : "18141863",
+          "siteID" : 2119,
+          "wtgName" : "AUG5-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 001",
+          "key" : "JOA1-001",
+          "serial" : "17141381",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 002",
+          "key" : "JOA1-002",
+          "serial" : "17141382",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 003",
+          "key" : "JOA1-003",
+          "serial" : "17141383",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 004",
+          "key" : "JOA1-004",
+          "serial" : "17141384",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 005",
+          "key" : "JOA1-005",
+          "serial" : "17141385",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 006",
+          "key" : "JOA1-006",
+          "serial" : "17141386",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 007",
+          "key" : "JOA1-007",
+          "serial" : "17141387",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 008",
+          "key" : "JOA1-008",
+          "serial" : "17141388",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 009",
+          "key" : "JOA1-009",
+          "serial" : "17141389",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 010",
+          "key" : "JOA1-010",
+          "serial" : "17141390",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 011",
+          "key" : "JOA1-011",
+          "serial" : "17141391",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 012",
+          "key" : "JOA1-012",
+          "serial" : "17141392",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 013",
+          "key" : "JOA1-013",
+          "serial" : "17141393",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 014",
+          "key" : "JOA1-014",
+          "serial" : "17141394",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 015",
+          "key" : "JOA1-015",
+          "serial" : "17141395",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 016",
+          "key" : "JOA1-016",
+          "serial" : "17141396",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana I 017",
+          "key" : "JOA1-017",
+          "serial" : "17141397",
+          "siteID" : 2118,
+          "wtgName" : "JOA1-017"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 001",
+          "key" : "JOA3-001",
+          "serial" : "18141465",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 002",
+          "key" : "JOA3-002",
+          "serial" : "18141466",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 003",
+          "key" : "JOA3-003",
+          "serial" : "18141467",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 004",
+          "key" : "JOA3-004",
+          "serial" : "18141468",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 005",
+          "key" : "JOA3-005",
+          "serial" : "18141469",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 006",
+          "key" : "JOA3-006",
+          "serial" : "18141470",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 007",
+          "key" : "JOA3-007",
+          "serial" : "18141471",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 008",
+          "key" : "JOA3-008",
+          "serial" : "18141472",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 009",
+          "key" : "JOA3-009",
+          "serial" : "18141473",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 010",
+          "key" : "JOA3-010",
+          "serial" : "18141474",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 011",
+          "key" : "JOA3-011",
+          "serial" : "18141475",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 012",
+          "key" : "JOA3-012",
+          "serial" : "18141476",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 013",
+          "key" : "JOA3-013",
+          "serial" : "18141477",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 014",
+          "key" : "JOA3-014",
+          "serial" : "18141478",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 015",
+          "key" : "JOA3-015",
+          "serial" : "18141479",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana III 016",
+          "key" : "JOA3-016",
+          "serial" : "18141480",
+          "siteID" : 2118,
+          "wtgName" : "JOA3-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 001",
+          "key" : "JOA4-001",
+          "serial" : "17141398",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 002",
+          "key" : "JOA4-002",
+          "serial" : "17141399",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 003",
+          "key" : "JOA4-003",
+          "serial" : "17141400",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 004",
+          "key" : "JOA4-004",
+          "serial" : "17141401",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 005",
+          "key" : "JOA4-005",
+          "serial" : "17141402",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 006",
+          "key" : "JOA4-006",
+          "serial" : "17141403",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 007",
+          "key" : "JOA4-007",
+          "serial" : "17141404",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 008",
+          "key" : "JOA4-008",
+          "serial" : "17141405",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 009",
+          "key" : "JOA4-009",
+          "serial" : "17141406",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 010",
+          "key" : "JOA4-010",
+          "serial" : "17141407",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 011",
+          "key" : "JOA4-011",
+          "serial" : "17141408",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 012",
+          "key" : "JOA4-012",
+          "serial" : "17141409",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 013",
+          "key" : "JOA4-013",
+          "serial" : "17141410",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 014",
+          "key" : "JOA4-014",
+          "serial" : "17141411",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 015",
+          "key" : "JOA4-015",
+          "serial" : "17141412",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana IV 016",
+          "key" : "JOA4-016",
+          "serial" : "17141413",
+          "siteID" : 2118,
+          "wtgName" : "JOA4-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 001",
+          "key" : "JOA5-001",
+          "serial" : "17141414",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 002",
+          "key" : "JOA5-002",
+          "serial" : "17141415",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 003",
+          "key" : "JOA5-003",
+          "serial" : "17141416",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 004",
+          "key" : "JOA5-004",
+          "serial" : "17141417",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 005",
+          "key" : "JOA5-005",
+          "serial" : "17141418",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 006",
+          "key" : "JOA5-006",
+          "serial" : "17141419",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 007",
+          "key" : "JOA5-007",
+          "serial" : "17141420",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 008",
+          "key" : "JOA5-008",
+          "serial" : "17141421",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 009",
+          "key" : "JOA5-009",
+          "serial" : "17141422",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 010",
+          "key" : "JOA5-010",
+          "serial" : "17141423",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 011",
+          "key" : "JOA5-011",
+          "serial" : "17141424",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 012",
+          "key" : "JOA5-012",
+          "serial" : "17141425",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 013",
+          "key" : "JOA5-013",
+          "serial" : "17141426",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 014",
+          "key" : "JOA5-014",
+          "serial" : "17141427",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 015",
+          "key" : "JOA5-015",
+          "serial" : "17141428",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 016",
+          "key" : "JOA5-016",
+          "serial" : "17141429",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana V 017",
+          "key" : "JOA5-017",
+          "serial" : "17141430",
+          "siteID" : 2118,
+          "wtgName" : "JOA5-017"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 001",
+          "key" : "JOA7-001",
+          "serial" : "17141431",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-001"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 002",
+          "key" : "JOA7-002",
+          "serial" : "17141432",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-002"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 003",
+          "key" : "JOA7-003",
+          "serial" : "17141433",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-003"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 004",
+          "key" : "JOA7-004",
+          "serial" : "17141434",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-004"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 005",
+          "key" : "JOA7-005",
+          "serial" : "17141435",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-005"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 006",
+          "key" : "JOA7-006",
+          "serial" : "17141436",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-006"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 007",
+          "key" : "JOA7-007",
+          "serial" : "17141437",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-007"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 008",
+          "key" : "JOA7-008",
+          "serial" : "17141438",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-008"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 009",
+          "key" : "JOA7-009",
+          "serial" : "17141439",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-009"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 010",
+          "key" : "JOA7-010",
+          "serial" : "17141440",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-010"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 011",
+          "key" : "JOA7-011",
+          "serial" : "17141441",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-011"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 012",
+          "key" : "JOA7-012",
+          "serial" : "17141442",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-012"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 013",
+          "key" : "JOA7-013",
+          "serial" : "17141443",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-013"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 014",
+          "key" : "JOA7-014",
+          "serial" : "17141444",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-014"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 015",
+          "key" : "JOA7-015",
+          "serial" : "17141445",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-015"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 016",
+          "key" : "JOA7-016",
+          "serial" : "17141446",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-016"
+        },
+        {
+          "currentState" : 1,
+          "fullName" : "Santa Joana VII 017",
+          "key" : "JOA7-017",
+          "serial" : "17141447",
+          "siteID" : 2118,
+          "wtgName" : "JOA7-017"
+        }
   ],
   "COPEL" : [
     {

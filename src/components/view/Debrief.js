@@ -66,43 +66,50 @@ const styles = theme => ({
 //   { value: 'SSE', label: 'SSE' },
 // ];
 
-// const tipo_hora = [
-//   { value: 'DT double time 1st', label: 'DT double time 1st' },
-//   { value: 'OT 1sr Shift', label: 'OT 1sr Shift' },
-//   { value: 'Regular 1', label: 'Regular 1' },
-// ];
+const tipohora = [
+  { value: 'Aplicada', label: 'Aplicada' },
+  { value: 'NAO Aplicada', label: 'NAO Aplicada' },
+];
+
+const laborcodes = [
+  { value: 'LBR01', label: 'LBR01' },
+  { value: 'TVL01', label: 'TVL01' },
+  { value: 'ADM01', label: 'ADM01' },
+  { value: 'JPR01', label: 'JPR01' },
+  { value: 'TBL01', label: 'TBL01' },
+  { value: 'WTR01', label: 'WTR01' },
+  { value: 'CCS01', label: 'CCS01' }
+];
 
 const complexo_eolico = [
-  { value: 'Uniao dos Ventos', label: 'Uniao dos Ventos' },
+  { value: 'UDV', label: 'Uniao dos Ventos' },
+  { value: 'V3', label: 'Ventos 3' },
   { value: 'CPFL', label: 'CPFL' },
-  { value: 'Asa Branca', label: 'Asa Branca' },
-  { value: 'Riachão', label: 'Riachão' },
+  { value: 'ASABRANCA', label: 'Asa Branca' },
+  { value: 'RIACHAO', label: 'Riachão' },
   { value: 'COPEL', label: 'COPEL' },
   { value: 'RDV', label: 'RDV' },
-  { value: 'Miassaba', label: 'Miassaba' },
-  { value: 'Chapada I', label: 'Chapada I' },
-  { value: 'Chapada II&III', label: 'Chapada II&III' },
-  { value: 'Ventos 3', label: 'Ventos 3' },
-  { value: 'Caldeirão', label: 'Caldeirão' },
-  { value: 'Delta 2', label: 'Delta 2' },
-  { value: 'Delta 3', label: 'Delta 3' },
-  { value: 'Amontada', label: 'Amontada' },
-  { value: 'Trairi', label: 'Trairi' },
-  { value: 'Eletrosul', label: 'Eletrosul' },
-  { value: 'Pontal', label: 'Pontal' },
-  { value: 'Senandes', label: 'Senandes' },
-  { value: 'Sta Brigida', label: 'Sta Brigida' },
-  { value: 'São Clemente', label: 'São Clemente' },
+  { value: 'CHAPADAI', label: 'Chapada I' },
+  { value: 'CHAPADAII', label: 'Chapada II&III' },
+  { value: 'CALDEIRAO', label: 'Caldeirão' },
+  { value: 'OMEGA2', label: 'Delta 2' },
+  { value: 'OMEGA3', label: 'Delta 3' },
+  { value: 'AMONTADA', label: 'Amontada' },
+  { value: 'TRAIRI', label: 'Trairi' },
+  { value: 'ELETROSUL', label: 'Eletrosul' },
+  { value: 'PONTAL', label: 'Pontal' },
+  { value: 'SENANDES', label: 'Senandes' },
+  { value: 'SANTABRIGIDA', label: 'Sta Brigida' },
+  { value: 'SAOCLEMENTE', label: 'São Clemente' },
   { value: 'PEC', label: 'PEC' },
-  { value: 'PEC Expansão', label: 'PEC Expansão' },
-  { value: 'Brazil Wind', label: 'Brazil Wind' },
-  { value: 'Rio Energy', label: 'Rio Energy' },
-  { value: 'Brotas', label: 'Brotas' },
-  { value: 'Campo Largo', label: 'Campo Largo' },
+  { value: 'BW', label: 'Brazil Wind' },
+  { value: 'BIOENERGY', label: 'Rio Energy' },
+  { value: 'BROTAS', label: 'Brotas' },
+  { value: 'CAMPOLARGO', label: 'Campo Largo' },
   { value: 'CER', label: 'CER' },
-  { value: 'Brookfield', label: 'Brookfield' },
-  { value: 'Tianguá', label: 'Tianguá' },
-  { value: 'AES', label: 'AES' }
+  { value: 'RENOVA', label: 'Brookfield' },
+  { value: 'TIANGUA', label: 'Tianguá' },
+  { value: 'TERRAFORM', label: 'AES' }
 ];
 
 class Debrief extends Component {
@@ -120,6 +127,8 @@ class Debrief extends Component {
       // tipo_hora: 'Regular 1',
       complexo_eolico: 'PEC',
       sso_tecnico: '',
+      problemcode: '',
+      resolutioncode: '',
       data_do_debrief: new Date().toISOString(),
       open: false,
       vertical: 'top',
@@ -131,7 +140,7 @@ class Debrief extends Component {
     event.preventDefault();
     this.setState({ open: true });
     fire.database().ref('debriefs').push(
-        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico }
+        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
     );
     this.setState({ numero_sr: '' });
   };
@@ -141,9 +150,19 @@ class Debrief extends Component {
   handleClose = () => { this.setState({ open: false }); };
 
   handleMudancaAtividade = idx => evt => {
+    console.log('mudando atividade')
+    console.log(evt.target)
     const nova_atividade = this.state.labor.map((atividade, sidx) => {
       if (idx !== sidx) return atividade;
       return { ...atividade, [evt.target.id]: evt.target.value };
+    });
+    this.setState({ labor: nova_atividade });
+  };
+
+  handleMudancaAtividadeLaborCode = idx => evt => {
+    const nova_atividade = this.state.labor.map((atividade, sidx) => {
+      if (idx !== sidx) return atividade;
+      return { ...atividade, [evt.target.name]: evt.target.value };
     });
     this.setState({ labor: nova_atividade });
   };
@@ -160,7 +179,7 @@ class Debrief extends Component {
   handleRemoveParts = idx => () => { this.setState((prevState, props) => ({ material: this.state.labor.filter((s, sidx) => idx !== sidx), keyMaterial: prevState.keyMaterial-1 })); };
 
   adicionaNovoLabor = () => {
-      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), }
+      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), laborcode: 'LBR01', tipohora: 'Aplicada' }
       this.setState((prevState, props) => ({ labor: this.state.labor.concat([_novolabor]), keyLabor: _novolabor.key + 1 }));
   };
 
@@ -195,6 +214,9 @@ class Debrief extends Component {
             </TextField>
             <TextField id="sso_tecnico" required label="SSO Técnico" variant="standard" className={classes.textField} value={this.state.sso_tecnico} onChange={this.handleChange('sso_tecnico')} margin="normal" />
 
+            <TextField id="problemcode" required label="Problem code" variant="standard" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal" />
+            <TextField id="resolutioncode" required label="Resolution code" variant="standard" className={classes.textField} value={this.state.resolutioncode} onChange={this.handleChange('resolutioncode')} margin="normal" />
+
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> HORAS UTILIZADAS: </Typography> </Paper>
             {this.state.labor.map((atividade, idx) => (
                 <div key={atividade.key}>
@@ -203,6 +225,12 @@ class Debrief extends Component {
                     </Paper>
                     <TextField id="inicio" required label="Inicio atividade" type="datetime-local" variant="standard" value={atividade.inicio} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <TextField id="fim" required label="Fim atividade" type="datetime-local" variant="standard" value={atividade.fim} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
+                    <TextField id="labor" name={'laborcode'} select required label="Labor code" className={classes.textField} value={atividade.laborcode} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
+                      {laborcodes.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
+                    </TextField>
+                    <TextField id="tipohora" select name={'tipohora'} required label="Tipo hora" className={classes.textField} value={atividade.tipohora} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
+                      {tipohora.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
+                    </TextField>
                     <IconButton onClick={this.handleRemoveAtividade(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
