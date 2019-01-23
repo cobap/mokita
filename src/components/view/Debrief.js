@@ -78,7 +78,9 @@ const laborcodes = [
   { value: 'JPR01', label: 'JPR01' },
   { value: 'TBL01', label: 'TBL01' },
   { value: 'WTR01', label: 'WTR01' },
-  { value: 'CCS01', label: 'CCS01' }
+  { value: 'CCS01', label: 'CCS01' },
+  { value: 'EHS01', label: 'EHS01' },
+  { value: 'TRA01', label: 'TRA01' }
 ];
 
 const complexo_eolico = [
@@ -103,13 +105,15 @@ const complexo_eolico = [
   { value: 'SAOCLEMENTE', label: 'São Clemente' },
   { value: 'PEC', label: 'PEC' },
   { value: 'BW', label: 'Brazil Wind' },
-  { value: 'BIOENERGY', label: 'Rio Energy' },
+  { value: 'BIOENERGY', label: 'Bio Energy' },
+  { value: 'CAETITE', label: 'Caetite' },
+  { value: 'UMBURANAS', label: 'Umburanas' },
   { value: 'BROTAS', label: 'Brotas' },
   { value: 'CAMPOLARGO', label: 'Campo Largo' },
   { value: 'CER', label: 'CER' },
-  { value: 'RENOVA', label: 'Brookfield' },
+  { value: 'TERRAFORM', label: 'Brookfield' },
   { value: 'TIANGUA', label: 'Tianguá' },
-  { value: 'TERRAFORM', label: 'AES' }
+  { value: 'RENOVA', label: 'AES' }
 ];
 
 class Debrief extends Component {

@@ -82,9 +82,9 @@ const complexo_eolico = [
   { value: 'BROTAS', label: 'Brotas' },
   { value: 'CAMPOLARGO', label: 'Campo Largo' },
   { value: 'CER', label: 'CER' },
-  { value: 'RENOVA', label: 'Brookfield' },
+  { value: 'TERRAFORM', label: 'Brookfield' },
   { value: 'TIANGUA', label: 'Tianguá' },
-  { value: 'TERRAFORM', label: 'AES' }
+  { value: 'RENOVA', label: 'AES' }
 ];
 
 class Header extends Component {

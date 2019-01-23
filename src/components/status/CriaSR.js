@@ -37,6 +37,7 @@ const tipo_sr = [
   { value: 'O&M - Non PM', label: 'O&M - Non PM' },
   { value: 'O&M - PM', label: 'O&M - PM' },
   { value: 'Customer Request', label: 'Customer Request' },
+  { value: 'Warranty', label: 'Warranty' }
 ];
 
 class CriaSR extends React.Component {
