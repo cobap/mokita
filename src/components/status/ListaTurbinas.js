@@ -80,7 +80,7 @@ class ListaTurbinas extends React.Component {
     console.log(someArg);
     someArg.windfarm = this.props.windfarm
     console.log(someArg.key);
-    fire.database().ref('servicerequest').push( someArg );
+    fire.database().ref('servicerequest/' + someArg.key).set( someArg );
     this.setState({turbina_foi_selecionada:false, openResultadoSR:true, codigo_sr:someArg.key });
   }
 

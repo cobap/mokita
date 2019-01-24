@@ -56,16 +56,6 @@ const styles = theme => ({
     }
 });
 
-// const empresas = [
-//   { value: 'EUM Montage', label: 'EUM Montage' },
-//   { value: 'Eurogruas', label: 'Eurogruas' },
-//   { value: 'Field Core', label: 'Field Core' },
-//   { value: 'Service, Darcy', label: 'Darcy Pacheco' },
-//   { value: 'Totalwind', label: 'Totalwind' },
-//   { value: 'MS Servicos', label: 'MS Servicos' },
-//   { value: 'SSE', label: 'SSE' },
-// ];
-
 const tipohora = [
   { value: 'Aplicada', label: 'Aplicada' },
   { value: 'NAO Aplicada', label: 'NAO Aplicada' },
@@ -131,19 +121,37 @@ class Debrief extends Component {
       // tipo_hora: 'Regular 1',
       complexo_eolico: 'PEC',
       sso_tecnico: '',
-      problemcode: '',
-      resolutioncode: '',
+      lista_problemcode: [],
+      problemcode: 'GENERAL',
+      lista_resolutioncode: [],
+      resolutioncode: 'MAINTENANCE',
       data_do_debrief: new Date().toISOString(),
       open: false,
       vertical: 'top',
       horizontal: 'center',
     };
+
+  }
+
+  getProblemCode() {
+    var ref = fire.database().ref('problemcode');
+    ref.once('value').then((snapshot) => {
+        this.setState({ lista_problemcode: snapshot.val() });
+    });
+  }
+
+  getResolutionCode() {
+    var ref = fire.database().ref('resolutioncode');
+    ref.once('value').then((snapshot) => {
+        this.setState({ lista_resolutioncode: snapshot.val() });
+    });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ open: true });
-    fire.database().ref('debriefs').push(
+    let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substring(0,19) + this.state.numero_sr + ''
+    fire.database().ref('debriefs/' + testekey).set(
         { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
     );
     this.setState({ numero_sr: '' });
@@ -154,8 +162,6 @@ class Debrief extends Component {
   handleClose = () => { this.setState({ open: false }); };
 
   handleMudancaAtividade = idx => evt => {
-    console.log('mudando atividade')
-    console.log(evt.target)
     const nova_atividade = this.state.labor.map((atividade, sidx) => {
       if (idx !== sidx) return atividade;
       return { ...atividade, [evt.target.id]: evt.target.value };
@@ -195,6 +201,11 @@ class Debrief extends Component {
   handleMudancaWindfarm(novo_parque) { this.atualizaTurbinas(novo_parque) }
   handleMudancaStatus(novo_status) { this.setState({ filtro: novo_status, status_turbinas: this.state._status_turbinas_backup.filter(turbina => turbina.currentState === novo_status)}); }
 
+  componentWillMount() {
+     this.getProblemCode();
+     this.getResolutionCode();
+  }
+
   render() {
     const { classes } = this.props;
     const { vertical, horizontal, open } = this.state;
@@ -204,6 +215,9 @@ class Debrief extends Component {
     // const isEnabled = (data_menor_14 && length_sr) && data_no_futuro;
     var handleMudancaWindfarm = this.handleMudancaWindfarm;
     var handleMudancaStatus = this.handleMudancaStatus;
+    // if (this.lista_problemcode === undefined) {
+    //     return <div />
+    // }
 
     return (
       <div className="Debrief">
@@ -218,8 +232,13 @@ class Debrief extends Component {
             </TextField>
             <TextField id="sso_tecnico" required label="SSO Técnico" variant="standard" className={classes.textField} value={this.state.sso_tecnico} onChange={this.handleChange('sso_tecnico')} margin="normal" />
 
-            <TextField id="problemcode" required label="Problem code" variant="standard" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal" />
-            <TextField id="resolutioncode" required label="Resolution code" variant="standard" className={classes.textField} value={this.state.resolutioncode} onChange={this.handleChange('resolutioncode')} margin="normal" />
+            <TextField id="problemcode" select required label="Problem Code" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal">
+            {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+            </TextField>
+
+            <TextField id="resolutioncode" select required label="Resolution Code" className={classes.textField} value={this.state.resolutioncode} onChange={this.handleChange('resolutioncode')} margin="normal">
+            {this.state.lista_resolutioncode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+            </TextField>
 
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> HORAS UTILIZADAS: </Typography> </Paper>
             {this.state.labor.map((atividade, idx) => (
