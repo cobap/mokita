@@ -118,7 +118,6 @@ class Debrief extends Component {
       labor: [],
       material: [],
       novo_labor: {},
-      // tipo_hora: 'Regular 1',
       complexo_eolico: 'PEC',
       sso_tecnico: '',
       lista_problemcode: [],

@@ -42,6 +42,14 @@ export const menuList = (
         <ListItemText primary="Ver lista de SR" />
       </ListItem>
     </Link>
+    <Link to="/debriefs">
+      <ListItem button>
+        <ListItemIcon>
+          <AssessmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Lista Debriefs" />
+      </ListItem>
+    </Link>
     <Link to="/pcm">
       <ListItem button>
         <ListItemIcon>

@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import ControleGrid from './components/view/ControleGrid';
 import Debrief from './components/view/Debrief';
 import Visualizador from './components/view/Visualizador';
+import VisualizadorDebrief from './components/view/VisualizadorDebrief';
 import PCM from './components/view/PCM';
 
 // Router
@@ -21,6 +22,7 @@ ReactDOM.render(
           <Route path="/" exact={true} component={ControleGrid} />
           <Route path="/debrifar" exact={true} component={Debrief} />
           <Route path="/lista" exact={true} component={Visualizador} />
+          <Route path="/debriefs" exact={true} component={VisualizadorDebrief} />
           <Route path="/pcm" exact={true} component={PCM} />
       </Switch>
   </ BrowserRouter>
