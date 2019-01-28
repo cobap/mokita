@@ -50,6 +50,14 @@ export const menuList = (
         <ListItemText primary="Lista Debriefs" />
       </ListItem>
     </Link>
+    <Link to="/aprovacao">
+      <ListItem button>
+        <ListItemIcon>
+          <AssessmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Aprovar debriefs" />
+      </ListItem>
+    </Link>
     <Link to="/pcm">
       <ListItem button>
         <ListItemIcon>

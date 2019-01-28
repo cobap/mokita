@@ -111,20 +111,30 @@ class Debrief extends Component {
   constructor(props) {
     super(props);
 
+    let _material = []
+    let _labor = []
+
+    if(typeof props.informacoes.material !== 'undefined') {
+        _material = this.props.informacoes.material
+    }
+    if(typeof props.informacoes.labor !== 'undefined') {
+        _labor = this.props.informacoes.labor
+    }
+
     this.state = {
-      numero_sr: '',
-      keyLabor: 1,
-      keyMaterial: 1,
-      labor: [],
-      material: [],
+      numero_sr: this.props.informacoes.numero_sr,
+      keyLabor: _labor.length + 1,
+      keyMaterial: _material.length + 1,
+      labor: this.props.informacoes.labor,
+      material: _material,
       novo_labor: {},
-      complexo_eolico: 'PEC',
-      sso_tecnico: '',
+      complexo_eolico: this.props.informacoes.complexo,
+      sso_tecnico: this.props.informacoes.sso_tecnico,
       lista_problemcode: [],
-      problemcode: 'GENERAL',
+      problemcode: this.props.informacoes.problemcode,
       lista_resolutioncode: [],
-      resolutioncode: 'MAINTENANCE',
-      data_do_debrief: new Date().toISOString(),
+      resolutioncode: this.props.informacoes.resolutioncode,
+      data_do_debrief: this.props.informacoes.data_do_debrief,
       open: false,
       vertical: 'top',
       horizontal: 'center',
@@ -146,15 +156,15 @@ class Debrief extends Component {
     });
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.setState({ open: true });
-    let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substring(0,19) + this.state.numero_sr + ''
-    fire.database().ref('debriefs/' + testekey).set(
-        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
-    );
-    this.setState({ numero_sr: '' });
-  };
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   this.setState({ open: true });
+  //   let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substring(0,19) + this.state.numero_sr + ''
+  //   fire.database().ref('debriefs/' + testekey).set(
+  //       { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
+  //   );
+  //   this.setState({ numero_sr: '' });
+  // };
 
   handleChange = campo_formulario => event => { this.setState({ [campo_formulario]: event.target.value, }); };
 
@@ -197,6 +207,21 @@ class Debrief extends Component {
       this.setState((prevState, props) => ({ material: this.state.material.concat([_novapart]), keyMaterial: _novapart.key + 1 }));
   };
 
+  cancelarEdicao = () => {
+      this.props.handleEdicaoSR()
+  };
+
+  salvarEdicao = () => {
+      this.setState({ open: true });
+      let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substr(0, this.state.data_do_debrief.length - 5) + this.state.numero_sr + ''
+      fire.database().ref('debriefs/' + testekey).set(
+          { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
+      );
+
+
+      this.props.handleEdicaoSR()
+  };
+
   handleMudancaWindfarm(novo_parque) { this.atualizaTurbinas(novo_parque) }
   handleMudancaStatus(novo_status) { this.setState({ filtro: novo_status, status_turbinas: this.state._status_turbinas_backup.filter(turbina => turbina.currentState === novo_status)}); }
 
@@ -213,16 +238,15 @@ class Debrief extends Component {
 
     return (
       <div className="Debrief">
-        <Header handleMudancaWindfarm = {handleMudancaWindfarm.bind(this)} handleMudancaStatus = {handleMudancaStatus.bind(this)} windfarm={this.state.windfarm} />
         <header className="Debrief-header">
           <form className={classes.container} autoComplete="off" onSubmit={this.handleSubmit}>
 
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> INFORMAÇOES GERAIS: </Typography> </Paper>
-            <TextField id="numero_sr" required label="Codigo da SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
+            <TextField disabled id="numero_sr" required label="Codigo da SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
             <TextField id="complexo_eolico" select required label="Complexo Eólico" className={classes.textField} value={this.state.complexo_eolico} onChange={this.handleChange('complexo_eolico')} margin="normal">
               {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
             </TextField>
-            <TextField id="sso_tecnico" required label="SSO Técnico" variant="standard" className={classes.textField} value={this.state.sso_tecnico} onChange={this.handleChange('sso_tecnico')} margin="normal" />
+            <TextField disabled id="sso_tecnico" required label="SSO Técnico" variant="standard" className={classes.textField} value={this.state.sso_tecnico} onChange={this.handleChange('sso_tecnico')} margin="normal" />
 
             <TextField id="problemcode" select required label="Problem Code" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal">
             {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
@@ -263,14 +287,11 @@ class Debrief extends Component {
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovaPart()}} color="secondary"> +Parts </Button>
 
-            {/*
-                <TextField id="tipo_hora" select required label="Tipo de hora" className={classes.textField} value={this.state.tipo_hora} onChange={this.handleChange('tipo_hora')} helperText="Selecione o tipo de hora trabalhada" margin="normal">
-                {tipo_hora.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
-                </TextField>
-            */}
-
-            <Button disabled={false} variant="contained" type="submit" color="primary" fullWidth={true} className={classes.button}> Debrifar! </Button>
           </form>
+          <div>
+            <Button disabled={false} variant="contained" className={classes.button} onClick={() => {this.cancelarEdicao()}}> Cancelar </Button>
+            <Button disabled={false} variant="contained"  color="primary" className={classes.button} onClick={() => {this.salvarEdicao()}} > Salvar </Button>
+          </div>
         </header>
         <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} onClose={this.handleClose} ContentProps={{ 'aria-describedby': 'message-id', }} message={ <span id="message-id">Debrief enviado com sucesso!</span>} />
       </div>

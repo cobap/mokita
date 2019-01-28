@@ -11,7 +11,9 @@ import Button from '@material-ui/core/Button';
 
 import fire from './../../fire';
 
-import EditarSR from './../status/EditarSR';
+import MudancaDebrief from './../view/MudancaDebrief';
+
+
 
 const styles = theme => ({
   root: {
@@ -33,8 +35,11 @@ class TabelaSR extends Component {
     super(props);
     this.state = {
         lista_debriefs: [],
-        editar_sr: false
+        modo_editar: false
     };
+
+    this.handleEdicaoSR = this.handleEdicaoSR.bind(this)
+
   }
 
   atualizaDebriefs() {
@@ -58,10 +63,7 @@ class TabelaSR extends Component {
 
   editarDebrief = (key) => {
       console.log(key)
-      // var ref = fire.database().ref('debriefs');
-      // ref.orderByChild('key').equalTo(key).on('value', (snapshot) => {
-      //     this.setState({ editar_sr: true, detalhes_sr: snapshot.val()[Object.keys(snapshot.val())[0]], lista_debriefs: []});
-      // });
+      this.setState({ modo_editar: true, debrief_editavel: key });
   }
 
   componentDidUpdate(prevProps) {
@@ -82,40 +84,53 @@ class TabelaSR extends Component {
     this.atualizaDebriefs();
   }
 
+  handleEdicaoSR() {
+    this.setState({ modo_editar: false });
+  }
+
   render() {
     const { classes } = this.props;
     var handleFechaCriacaoSR = this.handleFechaCriacaoSR;
     var handleCriacaoSR = this.handleCriacaoSR;
 
-    return (
-    <div>
-      <Paper className={classes.root}>
-        <Table className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Código SR</TableCell>
-              <TableCell>Turbina</TableCell>
-              <TableCell>Data Debrief</TableCell>
-              <TableCell>Editar</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
+    if(this.state.modo_editar) {
+      return (
+        <div>
+          <MudancaDebrief editar={this.state.modo_editar} informacoes={this.state.debrief_editavel} handleEdicaoSR = {this.handleEdicaoSR}/>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div>
+        <Paper className={classes.root}>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Código SR</TableCell>
+                <TableCell>Turbina</TableCell>
+                <TableCell>Data Debrief</TableCell>
+                <TableCell>Editar</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
               {this.state.lista_debriefs.map(row => (
-                  <TableRow key={row.data_do_debrief}>
-                      <TableCell className={classes.celula} component="th" scope="row"> {row.numero_sr} </TableCell>
-                      <TableCell className={classes.celula} component="th" scope="row"> {row.numero_sr.substr(0, row.numero_sr.length - 12)} </TableCell>
-                      <TableCell className={classes.celula} component="th" scope="row"> {row.data_do_debrief.substr(0, row.data_do_debrief.length - 5)} </TableCell>
-                      <TableCell className={classes.celula} component="th" scope="row">
-                        <Button variant="contained" color="primary" fullWidth={false} className={classes.button} onClick={() => {this.editarDebrief(row)}}> Editar </Button>
-                    </TableCell>
-                  </TableRow>
+                <TableRow key={row.data_do_debrief}>
+                  <TableCell className={classes.celula} component="th" scope="row"> {row.numero_sr} </TableCell>
+                  <TableCell className={classes.celula} component="th" scope="row"> {row.numero_sr.substr(0, row.numero_sr.length - 12)} </TableCell>
+                  <TableCell className={classes.celula} component="th" scope="row"> {row.data_do_debrief.substr(0, row.data_do_debrief.length - 5)} </TableCell>
+                  <TableCell className={classes.celula} component="th" scope="row">
+                    <Button variant="contained" color="primary" fullWidth={false} className={classes.button} onClick={() => {this.editarDebrief(row)}}> Editar </Button>
+                  </TableCell>
+                </TableRow>
               ))}
-          </TableBody>
-        </Table>
-      </Paper>
-      <EditarSR open={this.state.editar_sr} turbina={false} detalhes_sr={this.state.detalhes_sr} handleFechaCriacaoSR = {handleFechaCriacaoSR.bind(this)} handleCriacaoSR = {handleCriacaoSR.bind(this)}/>
-    </div>
-    );
+            </TableBody>
+          </Table>
+        </Paper>
+        {/* <EditarSR open={this.state.editar_sr} turbina={false} detalhes_sr={this.state.detalhes_sr} handleFechaCriacaoSR = {handleFechaCriacaoSR.bind(this)} handleCriacaoSR = {handleCriacaoSR.bind(this)}/> */}
+        </div>
+      );
+    }
   }
 }
 
