@@ -50,9 +50,8 @@ class TabelaSR extends Component {
     ref.once('value').then((snapshot) => {
         Object.values(snapshot.val()).forEach((key,values) => {
             if(key.sso_tecnico === this.props.sso_tecnico) {
-                _temp.push(key)
+              _temp.push(key)
             }
-            // ! this.setState({ lista_debriefs: [...this.state.lista_debriefs, key] })
         });
         this.setState({ lista_debriefs: _temp })
     });

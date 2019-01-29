@@ -70,7 +70,19 @@ const laborcodes = [
   { value: 'WTR01', label: 'WTR01' },
   { value: 'CCS01', label: 'CCS01' },
   { value: 'EHS01', label: 'EHS01' },
-  { value: 'TRA01', label: 'TRA01' }
+  { value: 'TRA01', label: 'TRA01' },
+  { value: 'Time Off', label: 'Time Off' },
+  { value: 'On Call', label: 'On Call' }
+];
+
+const lista_hourstype = [
+  { value: 'Regular 1', label: 'Regular 1' },
+  { value: 'Bereavement', label: 'Bereavement (Licença-nojo - falecimento)' },
+  { value: 'Vacation', label: 'Vacation (férias)' },
+  { value: 'Floating Holiday', label: 'Floating Holiday (feriado ponte, interjornada)' },
+  { value: 'Holiday', label: 'Holiday (feriado ou folga)' },
+  { value: 'Personal Ilness Paid Hourly', label: 'Personal Ilness Paid Hourly (atestado médico)' },
+  { value: 'On Call', label: 'On Call (sobreaviso - tempo aguardando chamada)' }
 ];
 
 const complexo_eolico = [
@@ -118,8 +130,9 @@ class Debrief extends Component {
       labor: [],
       material: [],
       novo_labor: {},
-      complexo_eolico: 'PEC',
+      complexo_eolico: '',
       sso_tecnico: '',
+      hourtype: 'Regular 1',
       lista_problemcode: [],
       problemcode: 'GENERAL',
       lista_resolutioncode: [],
@@ -149,9 +162,10 @@ class Debrief extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ open: true });
+    console.log(this.state.material)
     let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substring(0,19) + this.state.numero_sr + ''
     fire.database().ref('debriefs/' + testekey).set(
-        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey }
+        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, hourstype: this.state.hourtype, aprovado: false }
     );
     this.setState({ numero_sr: '' });
   };
@@ -188,12 +202,12 @@ class Debrief extends Component {
   handleRemoveParts = idx => () => { this.setState((prevState, props) => ({ material: this.state.labor.filter((s, sidx) => idx !== sidx), keyMaterial: prevState.keyMaterial-1 })); };
 
   adicionaNovoLabor = () => {
-      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), laborcode: 'LBR01', tipohora: 'Aplicada' }
+      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), laborcode: 'LBR01', tipohora: 'Aplicada', hourtype:'Regular 1' }
       this.setState((prevState, props) => ({ labor: this.state.labor.concat([_novolabor]), keyLabor: _novolabor.key + 1 }));
   };
 
   adicionaNovaPart = () => {
-      let _novapart = { key: this.state.keyMaterial, partnumber: '', serialnumber:'', quantidade: 1 }
+      let _novapart = { key: this.state.keyMaterial, partnumber: '', serialnumber:'', quantidade: 1, partnumberout: '', serialnumberout:'', quantidadeout: 1 }
       this.setState((prevState, props) => ({ material: this.state.material.concat([_novapart]), keyMaterial: _novapart.key + 1 }));
   };
 
@@ -219,7 +233,7 @@ class Debrief extends Component {
 
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> INFORMAÇOES GERAIS: </Typography> </Paper>
             <TextField id="numero_sr" required label="Codigo da SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
-            <TextField id="complexo_eolico" select required label="Complexo Eólico" className={classes.textField} value={this.state.complexo_eolico} onChange={this.handleChange('complexo_eolico')} margin="normal">
+            <TextField id="complexo_eolico" select required label="Parque Eolico" className={classes.textField} value={this.state.complexo_eolico} onChange={this.handleChange('complexo_eolico')} margin="normal">
               {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
             </TextField>
             <TextField id="sso_tecnico" required label="SSO Técnico" variant="standard" className={classes.textField} value={this.state.sso_tecnico} onChange={this.handleChange('sso_tecnico')} margin="normal" />
@@ -240,6 +254,9 @@ class Debrief extends Component {
                     </Paper>
                     <TextField id="inicio" required label="Inicio atividade" type="datetime-local" variant="standard" value={atividade.inicio} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <TextField id="fim" required label="Fim atividade" type="datetime-local" variant="standard" value={atividade.fim} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
+                    <TextField id="hourtype" name={'hourtype'} select required label="Hour Type" className={classes.textField} value={atividade.hourtype} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
+                      {lista_hourstype.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
+                    </TextField>
                     <TextField id="labor" name={'laborcode'} select required label="Labor code" className={classes.textField} value={atividade.laborcode} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
                       {laborcodes.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
                     </TextField>
@@ -255,9 +272,12 @@ class Debrief extends Component {
             {this.state.material.map((material, idx) => (
                 <div key={material.key}>
                     <Paper className={classes.detalhes} elevation={1}> <Typography variant="p" component="p"> Peça-{material.key} </Typography> </Paper>
-                    <TextField id="partnumber" label="Part Number" type="standard" variant="standard" value={material.partnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
-                    <TextField id="serialnumber" label="Serial Number" type="standard" variant="standard" value={material.serialnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
-                    <TextField id="quantidade" label="Quantidade" type="number" variant="standard" value={material.quantidade} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="partnumber" label="Part Number In" type="standard" variant="standard" value={material.partnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="serialnumber" label="Serial Number In" type="standard" variant="standard" value={material.serialnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="quantidade" label="Quantidade In" type="number" variant="standard" value={material.quantidade} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="partnumberout" label="Part Number Out" type="standard" variant="standard" value={material.partnumberout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="serialnumberout" label="Serial Number Out" type="standard" variant="standard" value={material.serialnumberout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="quantidadeout" label="Quantidade Out" type="number" variant="standard" value={material.quantidadeout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
                     <IconButton onClick={this.handleRemoveParts(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}

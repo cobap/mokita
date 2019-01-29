@@ -86,6 +86,10 @@ class CriaSR extends React.Component {
             <form className={classes.form} noValidate>
             <FormControl className={classes.formControl}>
 
+            <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> Geral: </Typography> </Paper>
+            <TextField disabled fullWidth id="problemcode" label="Problem Code" variant="standard" className={classes.textField} value={this.props.detalhes_debrief.problemcode} margin="normal" />
+            <TextField disabled fullWidth id="resolutioncode" label="Resolution Code" variant="standard" className={classes.textField} value={this.props.detalhes_debrief.resolutioncode} margin="normal" />
+
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> Labor: </Typography> </Paper>
               <List component="nav">
                 {_labor.map(row => (

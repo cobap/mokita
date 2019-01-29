@@ -28,6 +28,24 @@ const styles = theme => ({
   }
 });
 
+function Aprovacao(props) {
+  const _aprovado = props.aprovado;
+  if (_aprovado) {
+    return (
+      <TableCell className={props.classes.celula} component="th" scope="row">
+        <Button disabled variant="contained" fullWidth={false} className={props.classes.button} > Aprovado </Button>
+      </TableCell>
+    );
+  }
+  return (
+    <TableCell className={props.classes.celula} component="th" scope="row">
+      <Button variant="contained" color="secondary" fullWidth={false} className={props.classes.button} onClick={() => {props.aprovarDebrief(props.row, false)}}> Rejeitar </Button>
+      <Button variant="contained" color="primary" fullWidth={false} className={props.classes.button} onClick={() => {props.aprovarDebrief(props.row, true)}}> Aprovar! </Button>
+    </TableCell>
+  );
+
+}
+
 class TabelaSR extends Component {
   constructor(props) {
     super(props);
@@ -41,6 +59,8 @@ class TabelaSR extends Component {
 
   }
 
+
+
   atualizaDebriefs() {
     console.log('ATUALIZANDO DEBRIEFS')
     let _temp = []
@@ -48,8 +68,8 @@ class TabelaSR extends Component {
     ref.once('value').then((snapshot) => {
         Object.values(snapshot.val()).forEach((key,values) => {
             if(key.complexo === this.props.windfarm) {
-                key.key = key.sso_tecnico + key.data_do_debrief.substr(0, key.data_do_debrief.length-5) + key.numero_sr + ""
-                _temp.push(key)
+              key.key = key.sso_tecnico + key.data_do_debrief.substr(0, key.data_do_debrief.length-5) + key.numero_sr + ""
+              _temp.push(key)
             }
         });
         this.setState({ lista_debriefs: _temp })
@@ -59,11 +79,10 @@ class TabelaSR extends Component {
 
   }
 
-  aprovarDebrief = (key) => {
+  aprovarDebrief = (key, aprovado) => {
     let testekey = key.sso_tecnico + key.data_do_debrief.substr(0, key.data_do_debrief.length - 5) + key.numero_sr + ''
+    key.aprovado = aprovado;
     console.log(key)
-    console.log(testekey)
-    key.aprovado = true;
     fire.database().ref('debriefs/' + testekey).set(key);
   }
 
@@ -118,9 +137,8 @@ class TabelaSR extends Component {
                   <TableCell className={classes.celula} component="th" scope="row">
                     <Button variant="contained" fullWidth={false} className={classes.button} onClick={() => {this.verificarLaborEMaterial(row)}}> Verificar </Button>
                   </TableCell>
-                  <TableCell className={classes.celula} component="th" scope="row">
-                    <Button variant="contained" color="secondary" fullWidth={false} className={classes.button} onClick={() => {this.aprovarDebrief(row)}}> Aprovar! </Button>
-                  </TableCell>
+                  <Aprovacao aprovado={row.aprovado} row={row} classes={classes} aprovarDebrief={this.aprovarDebrief} />
+
                 </TableRow>
               ))}
             </TableBody>
