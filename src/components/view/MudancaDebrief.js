@@ -61,6 +61,11 @@ const tipohora = [
   { value: 'NAO Aplicada', label: 'NAO Aplicada' },
 ];
 
+const tipo_peca = [
+  { value: 'Order', label: 'Order' },
+  { value: 'COI', label: 'COI' },
+];
+
 const laborcodes = [
   { value: 'LBR01', label: 'LBR01' },
   { value: 'TVL01', label: 'TVL01' },
@@ -156,16 +161,6 @@ class Debrief extends Component {
     });
   }
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   this.setState({ open: true });
-  //   let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substring(0,19) + this.state.numero_sr + ''
-  //   fire.database().ref('debriefs/' + testekey).set(
-  //       { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
-  //   );
-  //   this.setState({ numero_sr: '' });
-  // };
-
   handleChange = campo_formulario => event => { this.setState({ [campo_formulario]: event.target.value, }); };
 
   handleClose = () => { this.setState({ open: false }); };
@@ -187,11 +182,20 @@ class Debrief extends Component {
   };
 
   handleMudancaParts = idx => evt => {
-    const nova_parts = this.state.material.map((parts, sidx) => {
-      if (idx !== sidx) return parts;
-      return { ...parts, [evt.target.id]: evt.target.value };
-    });
-    this.setState({ material: nova_parts });
+    if(evt.target.name === 'tipopeca') {
+      const nova_parts = this.state.material.map((parts, sidx) => {
+        if (idx !== sidx) return parts;
+        return { ...parts, [evt.target.name]: evt.target.value };
+      });
+      this.setState({ material: nova_parts });
+    }
+    else {
+      const nova_parts = this.state.material.map((parts, sidx) => {
+        if (idx !== sidx) return parts;
+        return { ...parts, [evt.target.id]: evt.target.value };
+      });
+      this.setState({ material: nova_parts });
+    }
   };
 
   handleRemoveAtividade = idx => () => { this.setState((prevState, props) => ({ labor: this.state.labor.filter((s, sidx) => idx !== sidx), keyLabor: prevState.keyLabor-1 })); };
@@ -212,12 +216,12 @@ class Debrief extends Component {
   };
 
   salvarEdicao = () => {
-      this.setState({ open: true });
       let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substr(0, this.state.data_do_debrief.length - 5) + this.state.numero_sr + ''
+      // fire.database().ref('debriefs/' + testekey).remove();
+      this.setState({ open: true });
       fire.database().ref('debriefs/' + testekey).set(
-          { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode }
+          { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, editado: true, aprovado: 0, key: testekey}
       );
-
 
       this.props.handleEdicaoSR()
   };
@@ -242,7 +246,7 @@ class Debrief extends Component {
           <form className={classes.container} autoComplete="off" onSubmit={this.handleSubmit}>
 
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> INFORMAÇOES GERAIS: </Typography> </Paper>
-            <TextField disabled id="numero_sr" required label="Codigo da SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
+            <TextField id="numero_sr" required label="Codigo da SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
             <TextField id="complexo_eolico" select required label="Complexo Eólico" className={classes.textField} value={this.state.complexo_eolico} onChange={this.handleChange('complexo_eolico')} margin="normal">
               {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
             </TextField>
@@ -279,9 +283,15 @@ class Debrief extends Component {
             {this.state.material.map((material, idx) => (
                 <div key={material.key}>
                     <Paper className={classes.detalhes} elevation={1}> <Typography variant="p" component="p"> Peça-{material.key} </Typography> </Paper>
-                    <TextField id="partnumber" label="Part Number" type="standard" variant="standard" value={material.partnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
-                    <TextField id="serialnumber" label="Serial Number" type="standard" variant="standard" value={material.serialnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
-                    <TextField id="quantidade" label="Quantidade" type="number" variant="standard" value={material.quantidade} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="partnumber" label="Part Number In" type="standard" variant="standard" value={material.partnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="serialnumber" label="Serial Number In" type="standard" variant="standard" value={material.serialnumber} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="quantidade" label="Quantidade In" type="number" variant="standard" value={material.quantidade} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="partnumberout" label="Part Number Out" type="standard" variant="standard" value={material.partnumberout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="serialnumberout" label="Serial Number Out" type="standard" variant="standard" value={material.serialnumberout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="quantidadeout" label="Quantidade Out" type="number" variant="standard" value={material.quantidadeout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
+                    <TextField id="tipopeca" name="tipopeca" select required label="Tipo peça" className={classes.textField} value={material.tipopeca} onChange={this.handleMudancaParts(idx)}>
+                      {tipo_peca.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
+                    </TextField>
                     <IconButton onClick={this.handleRemoveParts(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}

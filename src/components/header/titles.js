@@ -66,5 +66,13 @@ export const menuList = (
         <ListItemText primary="PCM" />
       </ListItem>
     </Link>
+    <Link to="/repair">
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentTurnedInIcon />
+        </ListItemIcon>
+        <ListItemText primary="Repair" />
+      </ListItem>
+    </Link>
   </div>
 );

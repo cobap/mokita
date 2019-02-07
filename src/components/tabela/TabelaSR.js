@@ -55,16 +55,6 @@ class TabelaSR extends Component {
         this.setState({ lista_sr: _temp })
     });
 
-
-    // ref.orderByChild('windfarm').equalTo(this.props.windfarm).on('value', (snapshot) => {
-    //     Object.values(snapshot.val()).forEach((key,values) => {
-    //         console.log('Adicionando nova chave')
-    //         console.log(key)
-    //         this.setState({ lista_sr: [...this.state.lista_sr, key] })
-    //     });
-    // });
-
-
   }
 
   editarSR = (key) => {
@@ -72,6 +62,11 @@ class TabelaSR extends Component {
       ref.orderByChild('key').equalTo(key).on('value', (snapshot) => {
           this.setState({ editar_sr: true, detalhes_sr: snapshot.val()[Object.keys(snapshot.val())[0]], lista_sr: []});
       });
+  }
+
+  excluirSR = (key) => {
+      console.log(key)
+      fire.database().ref('servicerequest/' + key).remove();
   }
 
   componentDidUpdate(prevProps) {
@@ -117,6 +112,7 @@ class TabelaSR extends Component {
                       <TableCell className={classes.celula} component="th" scope="row"> {row.data} </TableCell>
                       <TableCell className={classes.celula} component="th" scope="row">
                         <Button variant="contained" color="primary" fullWidth={false} className={classes.button} onClick={() => {this.editarSR(row.key)}}> Editar </Button>
+                        <Button variant="contained" color="secondary" fullWidth={false} className={classes.button} onClick={() => {this.excluirSR(row.key)}}> Excluir </Button>
                     </TableCell>
                   </TableRow>
               ))}

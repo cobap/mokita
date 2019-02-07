@@ -50,6 +50,7 @@ class TabelaSR extends Component {
     ref.once('value').then((snapshot) => {
         Object.values(snapshot.val()).forEach((key,values) => {
             if(key.sso_tecnico === this.props.sso_tecnico) {
+              key._id = key.numero_sr + key.data_do_debrief
               _temp.push(key)
             }
         });
@@ -63,6 +64,12 @@ class TabelaSR extends Component {
   editarDebrief = (key) => {
       console.log(key)
       this.setState({ modo_editar: true, debrief_editavel: key });
+  }
+
+  excluirDebrief = (key) => {
+    console.log(key)
+    fire.database().ref('debriefs/' + key.key).remove();
+    this.atualizaDebriefs();
   }
 
   componentDidUpdate(prevProps) {
@@ -114,12 +121,13 @@ class TabelaSR extends Component {
             </TableHead>
             <TableBody>
               {this.state.lista_debriefs.map(row => (
-                <TableRow key={row.data_do_debrief}>
+                <TableRow key={row._id}>
                   <TableCell className={classes.celula} component="th" scope="row"> {row.numero_sr} </TableCell>
                   <TableCell className={classes.celula} component="th" scope="row"> {row.numero_sr.substr(0, row.numero_sr.length - 12)} </TableCell>
                   <TableCell className={classes.celula} component="th" scope="row"> {row.data_do_debrief.substr(0, row.data_do_debrief.length - 5)} </TableCell>
                   <TableCell className={classes.celula} component="th" scope="row">
                     <Button variant="contained" color="primary" fullWidth={false} className={classes.button} onClick={() => {this.editarDebrief(row)}}> Editar </Button>
+                    <Button variant="contained" color="secondary" fullWidth={false} className={classes.button} onClick={() => {this.excluirDebrief(row)}}> Excluir </Button>
                   </TableCell>
                 </TableRow>
               ))}

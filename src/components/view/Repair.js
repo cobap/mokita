@@ -56,39 +56,60 @@ const styles = theme => ({
     }
 });
 
-const tipohora = [
-  { value: 'Aplicada', label: 'Aplicada' },
-  { value: 'NAO Aplicada', label: 'NAO Aplicada' },
+const parada_guindaste = [
+  { value: 'Ambulancia', label: 'Ambulancia', categoria: 1 },
+  { value: 'Problema Guindaste Auxiliar', label: 'Problema Guindaste Auxiliar', categoria: 1 },
+  { value: 'Problema Guindaste Principal', label: 'Problema Guindaste Principal', categoria: 1 },
+  { value: 'Munck', label: 'Munck', categoria: 1 },
+  { value: 'Torre iluminação', label: 'Torre iluminação', categoria: 1 },
+  { value: 'Teste compactação do solo', label: 'Teste compactação do solo', categoria: 1 },
+  { value: 'Gerador auxiliar', label: 'Gerador auxiliar', categoria: 1 },
+  { value: 'Compressor auxiliar', label: 'Compressor auxiliar', categoria: 1 },
+  { value: 'Documentação de EHS', label: 'Documentação de EHS', categoria: 1 },
+  { value: 'Acidentes incidentes', label: 'Acidentes incidentes', categoria: 1 },
+  { value: 'Solicitação cliente', label: 'Solicitação cliente', categoria: 2 },
+  { value: 'Condições climaticas', label: 'Condições climaticas', categoria: 2 },
+  { value: 'Questões técnicas', label: 'Questões técnicas', categoria: 2 },
 ];
 
-const laborcodes = [
-  { value: 'LBR01', label: 'LBR01' },
-  { value: 'TVL01', label: 'TVL01' },
-  { value: 'ADM01', label: 'ADM01' },
-  { value: 'JPR01', label: 'JPR01' },
-  { value: 'TBL01', label: 'TBL01' },
-  { value: 'WTR01', label: 'WTR01' },
-  { value: 'CCS01', label: 'CCS01' },
-  { value: 'EHS01', label: 'EHS01' },
-  { value: 'TRA01', label: 'TRA01' },
-  { value: 'Time Off', label: 'Time Off' },
-  { value: 'On Call', label: 'On Call' }
+const tipo_parada = [
+  { value: 'Guindaste', label: 'Guindaste', categoria: 1 },
+  { value: 'Outros', label: 'Outros', categoria: 2 },
 ];
 
-const lista_hourstype = [
-  { value: 'Regular 1', label: 'Regular 1' },
-  { value: 'Bereavement', label: 'Bereavement (Licença-nojo - falecimento)' },
-  { value: 'Vacation', label: 'Vacation (férias)' },
-  { value: 'Floating Holiday', label: 'Floating Holiday (feriado ponte, interjornada)' },
-  { value: 'Holiday', label: 'Holiday (feriado ou folga)' },
-  { value: 'Personal Ilness Paid Hourly', label: 'Personal Ilness Paid Hourly (atestado médico)' },
-  { value: 'On Call', label: 'On Call (sobreaviso - tempo aguardando chamada)' }
+const tiporepair = [
+  { value: 'Inspecao', label: 'Inspeção', categoria: 0 },
+  { value: 'MCE', label: 'MCE', categoria: 1 },
+  { value: 'UpTowerRepair', label: 'Up Tower Repair', categoria: 2 },
+  { value: 'DownTowerRepair', label: 'Down Tower Repair', categoria: 3 },
 ];
 
-const tipo_peca = [
-  { value: 'Order', label: 'Order' },
-  { value: 'COI', label: 'COI' },
+const subcategoria = [
+  { value: 'Boroscopia Completa', label: 'Boroscopia Completa', categoria: 0},
+  { value: 'Boroscopia Planetaria', label: 'Boroscopia Planetaria', categoria: 0},
+  { value: 'Boroscopia Estagio Paralelo', label: 'Boroscopia Estagio Paralelo', categoria: 0},
+  { value: 'Boroscopia Mainbearing', label: 'Boroscopia Mainbearing', categoria: 0},
+  { value: 'Boroscopia Gerador', label: 'Boroscopia Gerador', categoria: 0},
+  { value: 'Inspeção por Drone', label: 'Inspeção por Drone', categoria: 0},
+  { value: 'Pitch bearing - Down Tower', label: 'Pitch bearing - Down Tower', categoria: 1},
+  { value: 'Pitch bearing - Up Tower', label: 'Pitch bearing - Up Tower', categoria: 1},
+  { value: 'Gearbox', label: 'Gearbox', categoria: 1},
+  { value: 'Gerador', label: 'Gerador', categoria: 1},
+  { value: 'Blade', label: 'Blade', categoria: 1},
 ];
+
+const atividades = [
+  { value: 'Kick off Meeting', label: 'Kick off Meeting', categoria: 0},
+  { value: 'DDS', label: 'DDS', categoria: 0},
+  { value: 'Transit Time', label: 'Transit Time', categoria: 0},
+  { value: 'Preparação do Ferramental', label: 'Preparação do Ferramental', categoria: 0},
+  { value: 'Execução da Atividade', label: 'Execução da Atividade', categoria: 0},
+  { value: 'Recolhimento do Ferramental', label: 'Recolhimento do Ferramental', categoria: 0},
+  { value: 'Relatório fotográfico', label: 'Relatório fotográfico', categoria: 0},
+  { value: 'Interrupção por Solicitação do Cliente', label: 'Interrupção por Solicitação do Cliente', categoria: 0},
+  { value: 'Interrupção por condições Climáticas', label: 'Interrupção por condições Climáticas', categoria: 0},
+  { value: 'Interrupção por condições Técnicas', label: 'Interrupção por condições Técnicas', categoria: 0},
+]
 
 const complexo_eolico = [
   { value: 'UDV', label: 'Uniao dos Ventos' },
@@ -123,30 +144,17 @@ const complexo_eolico = [
   { value: 'RENOVA', label: 'AES' }
 ];
 
-class Debrief extends Component {
+class Repair extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      numero_sr: '',
-      keyLabor: 1,
-      keyMaterial: 1,
-      labor: [],
-      material: [],
-      novo_labor: {},
-      complexo_eolico: '',
-      sso_tecnico: '',
-      hourtype: 'Regular 1',
-      tipopeca: 'Order',
-      lista_problemcode: [],
-      problemcode: 'GENERAL',
-      lista_resolutioncode: [],
-      resolutioncode: 'MAINTENANCE',
+      keyLabor: 1, keyMaterial: 1, keyParada: 1,
+      labor: [], material: [], paradas: [], lista_problemcode: [], lista_resolutioncode: [],
+      numero_sr: '', complexo_eolico: '', tiporepair: '', subcategoria: '', sso_tecnico: '', paccase: '', numerotecnicos: 0, problemcode: 'GENERAL', resolutioncode: 'REPAIR',
       data_do_debrief: new Date().toISOString(),
-      open: false,
-      vertical: 'top',
-      horizontal: 'center',
+      open: false, vertical: 'top', horizontal: 'center',
     };
 
   }
@@ -213,6 +221,23 @@ class Debrief extends Component {
     }
   };
 
+  handleMudancaParadas = idx => evt => {
+    if(evt.target.name === 'tipopeca') {
+      const nova_parts = this.state.material.map((parts, sidx) => {
+        if (idx !== sidx) return parts;
+        return { ...parts, [evt.target.name]: evt.target.value };
+      });
+      this.setState({ material: nova_parts });
+    }
+    else {
+      const nova_parts = this.state.material.map((parts, sidx) => {
+        if (idx !== sidx) return parts;
+        return { ...parts, [evt.target.id]: evt.target.value };
+      });
+      this.setState({ material: nova_parts });
+    }
+  };
+
   handleRemoveAtividade = idx => () => { this.setState((prevState, props) => ({ labor: this.state.labor.filter((s, sidx) => idx !== sidx), keyLabor: prevState.keyLabor-1 })); };
   handleRemoveParts = idx => () => { this.setState((prevState, props) => ({ material: this.state.labor.filter((s, sidx) => idx !== sidx), keyMaterial: prevState.keyMaterial-1 })); };
 
@@ -224,6 +249,11 @@ class Debrief extends Component {
   adicionaNovaPart = () => {
       let _novapart = { key: this.state.keyMaterial, partnumber: '', serialnumber:'', quantidade: 1, partnumberout: '', serialnumberout:'', quantidadeout: 1, tipopeca: 'Order' }
       this.setState((prevState, props) => ({ material: this.state.material.concat([_novapart]), keyMaterial: _novapart.key + 1 }));
+  };
+
+  adicionaNovaParada = () => {
+      let _novaparada = { key: this.state.keyParada }
+      this.setState((prevState, props) => ({ paradas: this.state.paradas.concat([_novaparada]), keyParada: _novaparada.key + 1 }));
   };
 
   handleMudancaWindfarm(novo_parque) { this.atualizaTurbinas(novo_parque) }
@@ -240,25 +270,43 @@ class Debrief extends Component {
     var handleMudancaWindfarm = this.handleMudancaWindfarm;
     var handleMudancaStatus = this.handleMudancaStatus;
 
+    if(this.state.tiporepair !== '') {
+      subcategoria.filter(option => { return option.categoria === this.state.tiporepair.categoria }).map(subcategoria => { return subcategoria.value })
+    }
+
     return (
-      <div className="Debrief">
+      <div className="Repair">
         <Header handleMudancaWindfarm = {handleMudancaWindfarm.bind(this)} handleMudancaStatus = {handleMudancaStatus.bind(this)} windfarm={this.state.windfarm} />
-        <header className="Debrief-header">
+        <header className="Repair-header">
           <form className={classes.container} autoComplete="off" onSubmit={this.handleSubmit}>
 
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> INFORMAÇOES GERAIS: </Typography> </Paper>
-            <TextField id="numero_sr" required label="Codigo da SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
+            <TextField id="numero_sr" required label="Numero SR" variant="standard" className={classes.textField} value={this.state.numero_sr} onChange={this.handleChange('numero_sr')} margin="normal" />
+
             <TextField id="complexo_eolico" select required label="Parque Eolico" className={classes.textField} value={this.state.complexo_eolico} onChange={this.handleChange('complexo_eolico')} margin="normal">
               {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
             </TextField>
+
             <TextField id="sso_tecnico" required label="SSO Técnico" variant="standard" className={classes.textField} value={this.state.sso_tecnico} onChange={this.handleChange('sso_tecnico')} margin="normal" />
 
+            <TextField id="paccase" label="PAC Case" variant="standard" className={classes.textField} value={this.state.paccase} onChange={this.handleChange('paccase')} margin="normal" />
+
+            <TextField required id="numerotecnicos" label="Numero Tecnicos" variant="standard" type="number" className={classes.textField} value={this.state.numerotecnicos} onChange={this.handleChange('numerotecnicos')} margin="normal" />
+
             <TextField id="problemcode" select required label="Problem Code" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal">
-            {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+              {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
             </TextField>
 
             <TextField id="resolutioncode" select required label="Resolution Code" className={classes.textField} value={this.state.resolutioncode} onChange={this.handleChange('resolutioncode')} margin="normal">
-            {this.state.lista_resolutioncode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+              {this.state.lista_resolutioncode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+            </TextField>
+
+            <TextField id="tiporepair" select required label="Tipo intervenção" className={classes.textField} value={this.state.tiporepair} onChange={this.handleChange('tiporepair')} margin="normal">
+              { tiporepair.map(option => ( <MenuItem key={option.value} value={option.categoria}> {option.value} </MenuItem> )) }
+            </TextField>
+
+            <TextField id="subcategoria" select required label="Subcategoria" className={classes.textField} value={this.state.subcategoria} onChange={this.handleChange('subcategoria')} margin="normal">
+              { subcategoria.filter(option => { return option.categoria === this.state.tiporepair }).map(option => ( <MenuItem key={option.value} value={option.value}> {option.value} </MenuItem> )) }
             </TextField>
 
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> HORAS UTILIZADAS: </Typography> </Paper>
@@ -269,21 +317,13 @@ class Debrief extends Component {
                     </Paper>
                     <TextField id="inicio" required label="Inicio atividade" type="datetime-local" variant="standard" value={atividade.inicio} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <TextField id="fim" required label="Fim atividade" type="datetime-local" variant="standard" value={atividade.fim} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
-                    <TextField id="hourtype" name={'hourtype'} select required label="Hour Type" className={classes.textField} value={atividade.hourtype} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
-                      {lista_hourstype.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
-                    </TextField>
-                    <TextField id="labor" name={'laborcode'} select required label="Labor code" className={classes.textField} value={atividade.laborcode} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
-                      {laborcodes.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
-                    </TextField>
-                    <TextField id="tipohora" select name={'tipohora'} required label="Tipo hora" className={classes.textField} value={atividade.tipohora} onChange={this.handleMudancaAtividadeLaborCode(idx)}>
-                      {tipohora.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
-                    </TextField>
+                    <TextField id="descricao" required label="Descricao" type="standard" variant="standard" value={atividade.descricao} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <IconButton onClick={this.handleRemoveAtividade(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovoLabor()}} color="secondary"> +Labor </Button>
             <Divider />
-            <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> MATERIAIS USADOS: </Typography> </Paper>
+            <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> MATERIAIS/PEÇAS : </Typography> </Paper>
             {this.state.material.map((material, idx) => (
                 <div key={material.key}>
                     <Paper className={classes.detalhes} elevation={1}> <Typography variant="p" component="p"> Peça-{material.key} </Typography> </Paper>
@@ -293,13 +333,28 @@ class Debrief extends Component {
                     <TextField id="partnumberout" label="Part Number Out" type="standard" variant="standard" value={material.partnumberout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
                     <TextField id="serialnumberout" label="Serial Number Out" type="standard" variant="standard" value={material.serialnumberout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
                     <TextField id="quantidadeout" label="Quantidade Out" type="number" variant="standard" value={material.quantidadeout} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParts(idx)} />
-                    <TextField id="tipopeca" name="tipopeca" select required label="Tipo peça" className={classes.textField} value={material.tipopeca} onChange={this.handleMudancaParts(idx)}>
-                      {tipo_peca.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
-                    </TextField>
                     <IconButton onClick={this.handleRemoveParts(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovaPart()}} color="secondary"> +Parts </Button>
+
+            <Divider />
+            <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> PARADAS : </Typography> </Paper>
+            {this.state.paradas.map((parada, idx) => (
+                <div key={parada.key}>
+                    <Paper className={classes.detalhes} elevation={1}> <Typography variant="p" component="p"> Parada- {parada.key} </Typography> </Paper>
+                    <TextField id="inicio" required label="Inicio parada" type="datetime-local" variant="standard" value={parada.inicio} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParadas(idx)} />
+                    <TextField id="fim" required label="Fim parada" type="datetime-local" variant="standard" value={parada.fim} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaParadas(idx)} />
+                    <TextField id="tipo_parada" name="tipo_parada" select required label="Tipo parada" className={classes.textField} value={parada.tipo_parada} onChange={this.handleMudancaParadas(idx)}>
+                      {tipo_parada.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
+                    </TextField>
+                    <TextField id="parada_guindaste" name="parada_guindaste" select required label="Categoria Parada" className={classes.textField} value={parada.parada_guindaste} onChange={this.handleMudancaParadas(idx)}>
+                      {parada_guindaste.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
+                    </TextField>
+                    <IconButton onClick={this.handleRemoveParts(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
+                </div>
+            ))}
+            <Button className={classes.botaoplus} onClick={() => {this.adicionaNovaParada()}} color="secondary"> +Paradas </Button>
 
             {/*
                 <TextField id="tipo_hora" select required label="Tipo de hora" className={classes.textField} value={this.state.tipo_hora} onChange={this.handleChange('tipo_hora')} helperText="Selecione o tipo de hora trabalhada" margin="normal">
@@ -310,10 +365,10 @@ class Debrief extends Component {
             <Button disabled={false} variant="contained" type="submit" color="primary" fullWidth={true} className={classes.button}> Debrifar! </Button>
           </form>
         </header>
-        <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} onClose={this.handleClose} ContentProps={{ 'aria-describedby': 'message-id', }} message={ <span id="message-id">Debrief enviado com sucesso!</span>} />
+        <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} onClose={this.handleClose} ContentProps={{ 'aria-describedby': 'message-id', }} message={ <span id="message-id">Repair enviado com sucesso!</span>} />
       </div>
     );
   }
 }
 
-export default withStyles(styles)(Debrief);
+export default withStyles(styles)(Repair);

@@ -105,9 +105,16 @@ class CriaSR extends React.Component {
               <List component="nav">
                 {_material.map(row => (
                 <ListItem>
-                  <TextField disabled fullWidth id="labor" label="Part Number" variant="standard" className={classes.textField} value={row.partnumber} margin="normal" />
-                  <TextField disabled fullWidth id="labor" label="Serial Number" variant="standard" className={classes.textField} value={row.serialnumber} margin="normal" />
-                  <TextField disabled fullWidth id="labor" label="Quantidade" variant="standard" className={classes.textField} value={row.quantidade} margin="normal" />
+                  <TextField disabled fullWidth id="labor" label="Part Number IN" variant="standard" className={classes.textField} value={row.partnumber} margin="normal" />
+                  <TextField disabled fullWidth id="labor" label="Serial Number IN" variant="standard" className={classes.textField} value={row.serialnumber} margin="normal" />
+                  <TextField disabled fullWidth id="labor" label="Quantidade IN" variant="standard" className={classes.textField} value={row.quantidade} margin="normal" />
+
+                  <TextField disabled fullWidth id="labor" label="Part Number OUT" variant="standard" className={classes.textField} value={row.partnumberout} margin="normal" />
+                  <TextField disabled fullWidth id="labor" label="Serial Number OUT" variant="standard" className={classes.textField} value={row.serialnumberout} margin="normal" />
+                  <TextField disabled fullWidth id="labor" label="Quantidade OUT" variant="standard" className={classes.textField} value={row.quantidadeout} margin="normal" />
+
+                  <TextField disabled fullWidth id="labor" label="Tipo Peça" variant="standard" className={classes.textField} value={row.tipopeca} margin="normal" />
+
                 </ListItem>
               ))}
               </List>

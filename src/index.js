@@ -10,6 +10,7 @@ import Visualizador from './components/view/Visualizador';
 import VisualizadorDebrief from './components/view/VisualizadorDebrief';
 import VisualizadorAprovacao from './components/view/VisualizadorAprovacao';
 import PCM from './components/view/PCM';
+import Repair from './components/view/Repair';
 
 // Router
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -26,6 +27,7 @@ ReactDOM.render(
           <Route path="/debriefs" exact={true} component={VisualizadorDebrief} />
           <Route path="/aprovacao" exact={true} component={VisualizadorAprovacao} />
           <Route path="/pcm" exact={true} component={PCM} />
+          <Route path="/repair" exact={true} component={Repair} />
       </Switch>
   </ BrowserRouter>
   , document.getElementById('root'));

@@ -30,17 +30,24 @@ const styles = theme => ({
 
 function Aprovacao(props) {
   const _aprovado = props.aprovado;
-  if (_aprovado) {
+  if (_aprovado === 1) {
     return (
       <TableCell className={props.classes.celula} component="th" scope="row">
         <Button disabled variant="contained" fullWidth={false} className={props.classes.button} > Aprovado </Button>
       </TableCell>
     );
   }
+  else if (_aprovado === -1) {
+    return (
+      <TableCell className={props.classes.celula} component="th" scope="row">
+        <Button color="secondary" variant="contained" fullWidth={false} className={props.classes.button} > Rejeitado </Button>
+      </TableCell>
+    );
+  }
   return (
     <TableCell className={props.classes.celula} component="th" scope="row">
-      <Button variant="contained" color="secondary" fullWidth={false} className={props.classes.button} onClick={() => {props.aprovarDebrief(props.row, false)}}> Rejeitar </Button>
-      <Button variant="contained" color="primary" fullWidth={false} className={props.classes.button} onClick={() => {props.aprovarDebrief(props.row, true)}}> Aprovar! </Button>
+      <Button variant="contained" color="secondary" fullWidth={false} className={props.classes.button} onClick={() => {props.aprovarDebrief(props.row, -1)}}> Rejeitar </Button>
+      <Button variant="contained" color="primary" fullWidth={false} className={props.classes.button} onClick={() => {props.aprovarDebrief(props.row, 1)}}> Aprovar! </Button>
     </TableCell>
   );
 
@@ -82,6 +89,7 @@ class TabelaSR extends Component {
   aprovarDebrief = (key, aprovado) => {
     let testekey = key.sso_tecnico + key.data_do_debrief.substr(0, key.data_do_debrief.length - 5) + key.numero_sr + ''
     key.aprovado = aprovado;
+    key.editado = false;
     console.log(key)
     fire.database().ref('debriefs/' + testekey).set(key);
   }
