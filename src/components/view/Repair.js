@@ -92,19 +92,18 @@ const subcategoria = [
   { value: 'Boroscopia Mainbearing', label: 'Boroscopia Mainbearing', categoria: 0, subcategoria: 1},
   { value: 'Boroscopia Gerador', label: 'Boroscopia Gerador', categoria: 0, subcategoria: 1},
   { value: 'Inspeção por Drone', label: 'Inspeção por Drone', categoria: 0, subcategoria: 1},
-
   { value: 'Pitch bearing - Up Tower', label: 'Pitch bearing - Up Tower', categoria: 1, subcategoria: 2},
   { value: 'Pitch bearing - Down Tower', label: 'Pitch bearing - Down Tower', categoria: 1, subcategoria: 3},
-
-  { value: 'Gerador', label: 'Gerador', categoria: 1, subcategoria: 4},
   { value: 'Gearbox - Liftra', label: 'Gearbox - Liftra', categoria: 1, subcategoria: 4},
-  { value: 'Gearbox - Descida Rotor', label: 'Gearbox - Descida Rotor', categoria: 1, subcategoria: 4},
-  { value: 'Pá', label: 'Pá', categoria: 1, subcategoria: 4},
-  { value: 'Transformador', label: 'Transformador', categoria: 1, subcategoria: 4},
-  { value: 'Block 2', label: 'Block 2', categoria: 1, subcategoria: 4},
-  { value: 'Main Shaft', label: 'Main Shaft', categoria: 1, subcategoria: 4},
-  { value: 'Nacelle', label: 'Nacelle', categoria: 1, subcategoria: 4},
-  { value: 'Carenagem da Nacelle', label: 'Carenagem da Nacelle', categoria: 1, subcategoria: 4},
+  { value: 'Gearbox - Descida Rotor', label: 'Gearbox - Descida Rotor', categoria: 1, subcategoria: 5},
+
+  { value: 'Gerador', label: 'Gerador', categoria: 1, subcategoria: 6},
+  { value: 'Pá', label: 'Pá', categoria: 1, subcategoria: 6},
+  { value: 'Transformador', label: 'Transformador', categoria: 1, subcategoria: 6},
+  { value: 'Block 2', label: 'Block 2', categoria: 1, subcategoria: 6},
+  { value: 'Main Shaft', label: 'Main Shaft', categoria: 1, subcategoria: 6},
+  { value: 'Nacelle', label: 'Nacelle', categoria: 1, subcategoria: 6},
+  { value: 'Carenagem da Nacelle', label: 'Carenagem da Nacelle', categoria: 1, subcategoria: 6},
 ];
 
 const atividades = [
@@ -161,16 +160,44 @@ const atividades = [
   { value: 'Pós Work', label: 'Pós Work', categoria: 3},
   { value: 'Recolhimento do Material', label: 'Recolhimento do Material', categoria: 3},
 
+  { value: 'Pré Work', label: 'Pré Work', categoria: 4},
+  { value: 'Retirada do teto da Nacelle', label: 'Retirada do teto da Nacelle', categoria: 4},
+  { value: 'Remoção do Cooler da Gearbox', label: 'Remoção do Cooler da Gearbox', categoria: 4},
+  { value: 'Quebra de torque do Shrinck Disc', label: 'Quebra de torque do Shrinck Disc', categoria: 4},
+  { value: 'Montagem do Liftra', label: 'Montagem do Liftra', categoria: 4},
+  { value: 'Retirada do disco de freio', label: 'Retirada do disco de freio', categoria: 4},
+  { value: 'Remoção da Gearbox', label: 'Remoção da Gearbox', categoria: 4},
+  { value: 'Descida da Gearbox', label: 'Descida da Gearbox', categoria: 4},
+  { value: 'Subida da Gearbox', label: 'Subida da Gearbox', categoria: 4},
+  { value: 'Instalação da Gearbox', label: 'Instalação da Gearbox', categoria: 4},
+  { value: 'Remoção do Liftra', label: 'Remoção do Liftra', categoria: 4},
+  { value: 'Instalação do disco de freio', label: 'Instalação do disco de freio', categoria: 4},
+  { value: 'Torque do Shrinck Disc', label: 'Torque do Shrinck Disc', categoria: 4},
+  { value: 'Instalação do cooler da Gearbox', label: 'Instalação do cooler da Gearbox', categoria: 4},
+  { value: 'Instalação do teto da Nacelle', label: 'Instalação do teto da Nacelle', categoria: 4},
+  { value: 'Pós Work', label: 'Pós Work', categoria: 4},
+  { value: 'Recolhimento do Material', label: 'Recolhimento do Material', categoria: 4},
+  { value: 'Relatório fotográfico', label: 'Relatório fotográfico', categoria: 4},
 
-
-
-
-
-
-
-
-
-
+  { value: 'Pré Work', label: 'Pré Work', categoria: 5},
+  { value: 'Giro do Rotor', label: 'Giro do Rotor', categoria: 5},
+  { value: 'Pega das pás de 10 e 2 horas', label: 'Pega das pás de 10 e 2 horas', categoria: 5},
+  { value: 'Pega da pá de 6 horas', label: 'Pega da pá de 6 horas', categoria: 5},
+  { value: 'Descida do rotor', label: 'Descida do rotor', categoria: 5},
+  { value: 'Retirada do teto da Nacelle', label: 'Retirada do teto da Nacelle', categoria: 5},
+  { value: 'Retirada da Gearbox', label: 'Retirada da Gearbox', categoria: 5},
+  { value: 'Quebra de torque do Shrinck Disc', label: 'Quebra de torque do Shrinck Disc', categoria: 5},
+  { value: 'Separação do Main Shaft da Gearbox', label: 'Separação do Main Shaft da Gearbox', categoria: 5},
+  { value: 'Instalação do Main Shaft na Gearbox', label: 'Instalação do Main Shaft na Gearbox', categoria: 5},
+  { value: 'Torque do Shrinck Disc', label: 'Torque do Shrinck Disc', categoria: 5},
+  { value: 'Instalação da Gearbox', label: 'Instalação da Gearbox', categoria: 5},
+  { value: 'Instalação do teto da Nacelle', label: 'Instalação do teto da Nacelle', categoria: 5},
+  { value: 'Subida do rotor', label: 'Subida do rotor', categoria: 5},
+  { value: 'Retirada do pega da pá de 6 horas', label: 'Retirada do pega da pá de 6 horas', categoria: 5},
+  { value: 'Torque dos prisioneiros', label: 'Torque dos prisioneiros', categoria: 5},
+  { value: 'Pós Work', label: 'Pós Work', categoria: 5},
+  { value: 'Recolhimento do Material', label: 'Recolhimento do Material', categoria: 5},
+  { value: 'Relatório fotográfico', label: 'Relatório fotográfico', categoria: 5},
 
 ];
 
@@ -337,10 +364,13 @@ class Repair extends Component {
   };
 
   handleRemoveAtividade = idx => () => { this.setState((prevState, props) => ({ labor: this.state.labor.filter((s, sidx) => idx !== sidx), keyLabor: prevState.keyLabor-1 })); };
-  handleRemoveParts = idx => () => { this.setState((prevState, props) => ({ material: this.state.labor.filter((s, sidx) => idx !== sidx), keyMaterial: prevState.keyMaterial-1 })); };
+
+  handleRemoveParts = idx => () => { this.setState((prevState, props) => ({ material: this.state.material.filter((s, sidx) => idx !== sidx), keyMaterial: prevState.keyMaterial-1 })); };
+
+  handleRemoveParada = idx => () => { this.setState((prevState, props) => ({ paradas: this.state.paradas.filter((s, sidx) => idx !== sidx), keyParada: prevState.keyParada-1 })); };
 
   adicionaNovoLabor = () => {
-      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), subcategoria: '' }
+      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '' }
       this.setState((prevState, props) => ({ labor: this.state.labor.concat([_novolabor]), keyLabor: _novolabor.key + 1 }));
   };
 
@@ -430,6 +460,7 @@ class Repair extends Component {
                 </div>
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovoLabor()}} color="secondary"> +Labor </Button>
+
             <Divider />
             <Paper className={classes.root} elevation={1}> <Typography variant="h5" component="h3"> MATERIAIS/PEÇAS : </Typography> </Paper>
             {this.state.material.map((material, idx) => (
@@ -461,7 +492,7 @@ class Repair extends Component {
                         subcategoria_parada.filter(option => { return option.categoria === parada.tipo_parada }).map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))
                       }
                     </TextField>
-                    <IconButton onClick={this.handleRemoveParts(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
+                    <IconButton onClick={this.handleRemoveParada(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovaParada()}} color="secondary"> +Paradas </Button>
