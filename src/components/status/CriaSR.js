@@ -11,8 +11,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
-import Chip from '@material-ui/core/Chip';
 import Paper from '@material-ui/core/Paper';
+import Chip from '@material-ui/core/Chip';
 import TagFacesIcon from '@material-ui/icons/TagFaces';
 
 const styles = theme => ({
@@ -95,24 +95,10 @@ class CriaSR extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-      // if(this.props.detalhes_sr) {
-      //     if(this.props.turbina === false ) {
-      //         this.setState({
-      //             tipo_sr: this.props.detalhes_sr.tipo_sr,
-      //             sr_summary: this.props.detalhes_sr.sr_summary,
-      //             lista_techs: this.props.detalhes_sr.lista_techs,
-      //             falha: this.props.detalhes_sr.falha,
-      //         });
-      //     }
-      // }
-  }
-
   render() {
     const { classes } = this.props;
     var handleFechaCriacaoSR = this.props.handleFechaCriacaoSR;
     // var handleCriacaoSR = this.props.handleCriacaoSR;
-
 
     return (
       <React.Fragment>
