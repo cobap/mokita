@@ -255,14 +255,12 @@ class Repair extends Component {
         this.setState({ lista_problemcode: snapshot.val() });
     });
   }
-
   getResolutionCode() {
     var ref = fire.database().ref('resolutioncode');
     ref.once('value').then((snapshot) => {
         this.setState({ lista_resolutioncode: snapshot.val() });
     });
   }
-
   getSubcategoria() {
     let _subcategoria_selecionada = subcategoria.find(subcategoria => subcategoria.value === this.state.subcategoria)
     return _subcategoria_selecionada
@@ -279,7 +277,6 @@ class Repair extends Component {
     }))
 
   };
-
   handleDeleteTecnico = data => () => {
     this.setState(state => {
       const lista_techs = [...state.lista_techs];
@@ -292,12 +289,11 @@ class Repair extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ open: true });
-    console.log(this.state.material)
-    let testekey = this.state.sso_tecnico + this.state.data_do_debrief.substring(0,19) + this.state.numero_sr + ''
-    fire.database().ref('debriefs/' + testekey).set(
-        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.sso_tecnico, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, hourstype: this.state.hourtype, aprovado: 0, editado: true }
+    let testekey = this.state.numero_sr + '' + this.state.data_do_debrief.substring(0,19)
+    fire.database().ref('debrief_mce/' + testekey).set(
+        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.lista_techs, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, paradas: this.state.paradas, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, tiporepair: this.state.tiporepair, subcategoria: this.state.subcategoria, paccase: this.state.paccase, numerotecnicos: this.state.numerotecnicos }
     );
-    this.setState({ numero_sr: '' });
+    this.setState({ numero_sr: '', lista_techs: [], paccase: '', numerotecnicos: '', labor: [], paradas: [], material: [] });
   };
 
   handleChange = campo_formulario => event => { this.setState({ [campo_formulario]: event.target.value, }); };
@@ -380,7 +376,7 @@ class Repair extends Component {
   };
 
   adicionaNovaParada = () => {
-      let _novaparada = { key: this.state.keyParada, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16),  }
+      let _novaparada = { key: this.state.keyParada, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), tipo_parada: '', subcategoria_parada: ''}
       this.setState((prevState, props) => ({ paradas: this.state.paradas.concat([_novaparada]), keyParada: _novaparada.key + 1 }));
   };
 
@@ -415,7 +411,7 @@ class Repair extends Component {
               {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
             </TextField>
 
-            <TextField required fullWidth id="novo_tech" label="Add novo tech" variant="standard" className={classes.textField} value={this.state.novo_tech} onChange={this.handleChange('novo_tech')} margin="normal" />
+            <TextField fullWidth id="novo_tech" label="Add novo tech" variant="standard" className={classes.textField} value={this.state.novo_tech} onChange={this.handleChange('novo_tech')} margin="normal" />
             <Button onClick={() => {this.adicionaNovoTech()}} color="secondary"> +Tech </Button>
             <Paper className={classes.root}>
               {this.state.lista_techs.map(data => { return ( <Chip key={data.key} icon={<TagFacesIcon />} label={data.label} onDelete={this.handleDeleteTecnico(data)} className={classes.chip} /> ); })}
@@ -455,7 +451,7 @@ class Repair extends Component {
                         atividades.filter(option => { return option.categoria === this.getSubcategoria().subcategoria }).map(option => ( <MenuItem key={option.value} value={option.value}> {option.value} </MenuItem> ))
                       }
                     </TextField>
-                    <TextField id="descricao" required label="Descricao" type="standard" variant="standard" value={atividade.descricao} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
+                    <TextField id="descricao" label="Descricao" type="standard" variant="standard" value={atividade.descricao} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <IconButton onClick={this.handleRemoveAtividade(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
             ))}
