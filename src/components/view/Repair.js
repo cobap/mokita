@@ -100,8 +100,8 @@ const subcategoria = [
   { value: 'Gearbox - Liftra', label: 'Gearbox - Liftra', categoria: 1, subcategoria: 4},
   { value: 'Gearbox - Descida Rotor', label: 'Gearbox - Descida Rotor', categoria: 1, subcategoria: 5},
   { value: 'Gerador', label: 'Gerador', categoria: 1, subcategoria: 6},
-  { value: 'Pá', label: 'Pá', categoria: 1, subcategoria: 7},
-  { value: 'Transformador', label: 'Transformador', categoria: 1, subcategoria: 8},
+  { value: 'Transformador', label: 'Transformador', categoria: 1, subcategoria: 7},
+  { value: 'Pá', label: 'Pá', categoria: 1, subcategoria: 8},
   { value: 'Block 2', label: 'Block 2', categoria: 1, subcategoria: 9},
   { value: 'Main Shaft', label: 'Main Shaft', categoria: 1, subcategoria: 10},
   { value: 'Gearbox + Main Shaft', label: 'Gearbox + Main Shaft', categoria: 1, subcategoria: 11},
@@ -149,16 +149,15 @@ const atividades = [
   { value: 'Transit Time', label: 'Transit Time', categoria: 0},
   { value: 'Pré Work', label: 'Pré Work', categoria: 0},
   { value: 'Preparação do Ferramental', label: 'Preparação do Ferramental', categoria: 0},
-  { value: 'Execução da Atividade', label: 'Execução da Atividade', categoria: 0},
   { value: 'Pós Work', label: 'Pós Work', categoria: 0},
   { value: 'Recolhimento do Material', label: 'Recolhimento do Material', categoria: 0},
-  { value: 'Recolhimento do Ferramental', label: 'Recolhimento do Ferramental', categoria: 0},
   { value: 'Relatório fotográfico', label: 'Relatório fotográfico', categoria: 0},
   { value: 'Interrupção por Solicitação do Cliente', label: 'Interrupção por Solicitação do Cliente', categoria: 0},
   { value: 'Interrupção por condições Climáticas', label: 'Interrupção por condições Climáticas', categoria: 0},
   { value: 'Interrupção por condições Técnicas', label: 'Interrupção por condições Técnicas', categoria: 0},
 
   // Buroscopia
+  { value: 'Recolhimento do Ferramental', label: 'Recolhimento do Ferramental', categoria: 1},
   { value: 'Inspeção do planetario', label: 'Inspeção do planetario', categoria: 1},
   { value: 'Inspeção dos rolamentos dos planetários', label: 'Inspeção dos rolamentos dos planetários', categoria: 1},
   { value: 'Inspeção do wing gear', label: 'Inspeção do wing gear', categoria: 1},
@@ -700,7 +699,7 @@ class Repair extends Component {
     this.state = {
       keyLabor: 1, keyMaterial: 1, keyParada: 1,
       labor: [], material: [], paradas: [], lista_problemcode: [], lista_resolutioncode: [], lista_techs: [],
-      numero_sr: '', complexo_eolico: '', tiporepair: '', subcategoria: '', sso_tecnico: '', paccase: '', numerotecnicos: 0, problemcode: 'GENERAL', resolutioncode: 'REPAIR', novo_tech: '',
+      numero_sr: '', wtg: '', complexo_eolico: '', tiporepair: '', subcategoria: '', sso_tecnico: '', paccase: '', numerotecnicos: 0, problemcode: 'GENERAL', resolutioncode: 'REPAIR', novo_tech: '',
       data_do_debrief: new Date().toISOString(),
       open: false, vertical: 'top', horizontal: 'center',
     };
@@ -749,9 +748,9 @@ class Repair extends Component {
     this.setState({ open: true });
     let testekey = this.state.numero_sr + '' + this.state.data_do_debrief.substring(0,19)
     fire.database().ref('debrief_mce/' + testekey).set(
-        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.lista_techs, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, paradas: this.state.paradas, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, tiporepair: this.state.tiporepair, subcategoria: this.state.subcategoria, paccase: this.state.paccase, numerotecnicos: this.state.numerotecnicos }
+        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.lista_techs, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, paradas: this.state.paradas, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, tiporepair: this.state.tiporepair, subcategoria: this.state.subcategoria, paccase: this.state.paccase, numerotecnicos: this.state.numerotecnicos, wtg: this.state.wtg }
     );
-    this.setState({ numero_sr: '', lista_techs: [], paccase: '', numerotecnicos: '', labor: [], paradas: [], material: [] });
+    this.setState({ numero_sr: '', lista_techs: [], paccase: '', wtg: '', numerotecnicos: '', labor: [], paradas: [], material: [] });
   };
 
   handleChange = campo_formulario => event => { this.setState({ [campo_formulario]: event.target.value, }); };
@@ -824,8 +823,17 @@ class Repair extends Component {
   handleRemoveParada = idx => () => { this.setState((prevState, props) => ({ paradas: this.state.paradas.filter((s, sidx) => idx !== sidx), keyParada: prevState.keyParada-1 })); };
 
   adicionaNovoLabor = () => {
-      let _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '' }
-      this.setState((prevState, props) => ({ labor: this.state.labor.concat([_novolabor]), keyLabor: _novolabor.key + 1 }));
+      if(this.state.subcategoria !== '') {
+        let _novolabor;
+        if(this.state.keyLabor > 1) {
+            let fim_ultimo_labor = this.state.labor[this.state.labor.length-1].fim
+            _novolabor = { key: this.state.keyLabor, inicio: fim_ultimo_labor, fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '' }
+        }
+        else {
+          _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '' }
+        }
+        this.setState((prevState, props) => ({ labor: this.state.labor.concat([_novolabor]), keyLabor: _novolabor.key + 1 }));
+      }
   };
 
   adicionaNovaPart = () => {
@@ -869,6 +877,8 @@ class Repair extends Component {
               {complexo_eolico.map(option => ( <MenuItem key={option.value} value={option.value}> {option.label} </MenuItem> ))}
             </TextField>
 
+            <TextField id="wtg" required label="WTG" variant="standard" className={classes.textField} value={this.state.wtg} onChange={this.handleChange('wtg')} margin="normal" />
+
             <TextField fullWidth id="novo_tech" label="Add novo tech" variant="standard" className={classes.textField} value={this.state.novo_tech} onChange={this.handleChange('novo_tech')} margin="normal" />
             <Button onClick={() => {this.adicionaNovoTech()}} color="secondary"> +Tech </Button>
             <Paper className={classes.root}>
@@ -878,7 +888,7 @@ class Repair extends Component {
 
             <TextField id="paccase" label="PAC Case" variant="standard" className={classes.textField} value={this.state.paccase} onChange={this.handleChange('paccase')} margin="normal" />
 
-            <TextField required id="numerotecnicos" label="Numero Tecnicos" variant="standard" type="number" className={classes.textField} value={this.state.numerotecnicos} onChange={this.handleChange('numerotecnicos')} margin="normal" />
+            <TextField required id="numerotecnicos" label="Numero Operadores" variant="standard" type="number" className={classes.textField} value={this.state.numerotecnicos} onChange={this.handleChange('numerotecnicos')} margin="normal" />
 
             <TextField id="problemcode" select required label="Problem Code" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal">
               {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
@@ -906,7 +916,7 @@ class Repair extends Component {
                     <TextField id="fim" required label="Fim atividade" type="datetime-local" variant="standard" value={atividade.fim} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <TextField id="subcategoria" name="subcategoria" select required label="Atividade" className={classes.textField} value={atividade.subcategoria} onChange={this.handleMudancaAtividade(idx)} margin="normal">
                       {
-                        atividades.filter(option => { return option.categoria === this.getSubcategoria().subcategoria }).map(option => ( <MenuItem key={option.value} value={option.value}> {option.value} </MenuItem> ))
+                        atividades.filter(option => { return option.categoria === this.getSubcategoria().subcategoria || option.categoria === 0 }).map(option => ( <MenuItem key={option.value} value={option.value}> {option.value} </MenuItem> ))
                       }
                     </TextField>
                     <TextField id="descricao" label="Descricao" type="standard" variant="standard" value={atividade.descricao} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
