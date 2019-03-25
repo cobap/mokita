@@ -74,7 +74,7 @@ const subcategoria_parada = [
 ];
 
 const tipo_parada = [
-  { value: 'Guindaste', label: 'Guindaste', categoria: 1 },
+  { value: 'Guindaste e periféricos', label: 'Guindaste e periféricos', categoria: 1 },
   { value: 'Outros', label: 'Outros', categoria: 2 },
 ];
 
@@ -699,7 +699,7 @@ class Repair extends Component {
     this.state = {
       keyLabor: 1, keyMaterial: 1, keyParada: 1,
       labor: [], material: [], paradas: [], lista_problemcode: [], lista_resolutioncode: [], lista_techs: [],
-      numero_sr: '', wtg: '', complexo_eolico: '', tiporepair: '', subcategoria: '', sso_tecnico: '', paccase: '', numerotecnicos: 0, problemcode: 'GENERAL', resolutioncode: 'REPAIR', novo_tech: '',
+      numero_sr: '', wtg: '', complexo_eolico: '', tiporepair: '', subcategoria: '', sso_tecnico: '', paccase: '', problemcode: 'GENERAL', resolutioncode: 'REPAIR', novo_tech: '',
       data_do_debrief: new Date().toISOString(),
       open: false, vertical: 'top', horizontal: 'center',
     };
@@ -723,24 +723,41 @@ class Repair extends Component {
     return _subcategoria_selecionada
   }
 
-  adicionaNovoTech() {
+  adicionaNovoTech(atividade, index, novo_tech) {
     let _tech = {};
-    _tech.label = this.state.novo_tech;
+    _tech.label = atividade.novo_tech;
     _tech.key = _tech.label;
 
+    let _labors = [];
+    _labors = this.state.labor;
+    _labors[index].lista_techs.push(_tech);
+    _labors[index].novo_tech = '';
+
     this.setState(prevState => ({
-      lista_techs: [...prevState.lista_techs, _tech],
-      novo_tech: ''
+      labor: _labors
     }))
 
   };
-  handleDeleteTecnico = data => () => {
-    this.setState(state => {
-      const lista_techs = [...state.lista_techs];
-      const chipToDelete = lista_techs.indexOf(data);
-      lista_techs.splice(chipToDelete, 1);
-      return { lista_techs };
-    });
+  handleDeleteTecnico = (data,index) => () => {
+
+    console.log(data)
+    console.log(index)
+
+    let _labors = [];
+    _labors = this.state.labor;
+    const chipToDelete = _labors[index].lista_techs.indexOf(data)
+    _labors[index].lista_techs.splice(chipToDelete, 1);
+
+    this.setState(prevState => ({
+      labor: _labors
+    }))
+
+    // this.setState(state => {
+    //   const lista_techs = [...state.lista_techs];
+    //   const chipToDelete = lista_techs.indexOf(data);
+    //   lista_techs.splice(chipToDelete, 1);
+    //   return { lista_techs };
+    // });
   };
 
   handleSubmit = (event) => {
@@ -748,9 +765,9 @@ class Repair extends Component {
     this.setState({ open: true });
     let testekey = this.state.numero_sr + '' + this.state.data_do_debrief.substring(0,19)
     fire.database().ref('debrief_mce/' + testekey).set(
-        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.lista_techs, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, paradas: this.state.paradas, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, tiporepair: this.state.tiporepair, subcategoria: this.state.subcategoria, paccase: this.state.paccase, numerotecnicos: this.state.numerotecnicos, wtg: this.state.wtg }
+        { numero_sr: this.state.numero_sr, sso_tecnico: this.state.lista_techs, data_do_debrief: this.state.data_do_debrief, labor: this.state.labor, material: this.state.material, paradas: this.state.paradas, complexo: this.state.complexo_eolico, problemcode: this.state.problemcode, resolutioncode: this.state.resolutioncode, key: testekey, tiporepair: this.state.tiporepair, subcategoria: this.state.subcategoria, paccase: this.state.paccase, wtg: this.state.wtg }
     );
-    this.setState({ numero_sr: '', lista_techs: [], paccase: '', wtg: '', numerotecnicos: '', labor: [], paradas: [], material: [] });
+    this.setState({ numero_sr: '', lista_techs: [], paccase: '', wtg: '', labor: [], paradas: [], material: [] });
   };
 
   handleChange = campo_formulario => event => { this.setState({ [campo_formulario]: event.target.value, }); };
@@ -827,10 +844,10 @@ class Repair extends Component {
         let _novolabor;
         if(this.state.keyLabor > 1) {
             let fim_ultimo_labor = this.state.labor[this.state.labor.length-1].fim
-            _novolabor = { key: this.state.keyLabor, inicio: fim_ultimo_labor, fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '' }
+            _novolabor = { key: this.state.keyLabor, inicio: fim_ultimo_labor, fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '', numerotecnicos:'', lista_techs: [] }
         }
         else {
-          _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '' }
+          _novolabor = { key: this.state.keyLabor, inicio: new Date().toISOString().substring(0,16), fim: new Date().toISOString().substring(0,16), subcategoria: '', descricao: '', numerotecnicos:'', lista_techs:[] }
         }
         this.setState((prevState, props) => ({ labor: this.state.labor.concat([_novolabor]), keyLabor: _novolabor.key + 1 }));
       }
@@ -879,24 +896,17 @@ class Repair extends Component {
 
             <TextField id="wtg" required label="WTG" variant="standard" className={classes.textField} value={this.state.wtg} onChange={this.handleChange('wtg')} margin="normal" />
 
-            <TextField fullWidth id="novo_tech" label="Add novo tech" variant="standard" className={classes.textField} value={this.state.novo_tech} onChange={this.handleChange('novo_tech')} margin="normal" />
-            <Button onClick={() => {this.adicionaNovoTech()}} color="secondary"> +Tech </Button>
-            <Paper className={classes.root}>
-              {this.state.lista_techs.map(data => { return ( <Chip key={data.key} icon={<TagFacesIcon />} label={data.label} onDelete={this.handleDeleteTecnico(data)} className={classes.chip} /> ); })}
-            </Paper>
+            <TextField id="paccase" required label="PAC Case" variant="standard" className={classes.textField} value={this.state.paccase} onChange={this.handleChange('paccase')} margin="normal" />
 
+            {/*
+              <TextField id="problemcode" select required label="Problem Code" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal">
+                {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+              </TextField>
 
-            <TextField id="paccase" label="PAC Case" variant="standard" className={classes.textField} value={this.state.paccase} onChange={this.handleChange('paccase')} margin="normal" />
-
-            <TextField required id="numerotecnicos" label="Numero Operadores" variant="standard" type="number" className={classes.textField} value={this.state.numerotecnicos} onChange={this.handleChange('numerotecnicos')} margin="normal" />
-
-            <TextField id="problemcode" select required label="Problem Code" className={classes.textField} value={this.state.problemcode} onChange={this.handleChange('problemcode')} margin="normal">
-              {this.state.lista_problemcode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
-            </TextField>
-
-            <TextField id="resolutioncode" select required label="Resolution Code" className={classes.textField} value={this.state.resolutioncode} onChange={this.handleChange('resolutioncode')} margin="normal">
-              {this.state.lista_resolutioncode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
-            </TextField>
+              <TextField id="resolutioncode" select required label="Resolution Code" className={classes.textField} value={this.state.resolutioncode} onChange={this.handleChange('resolutioncode')} margin="normal">
+                {this.state.lista_resolutioncode.map(option => ( <MenuItem key={option.key} value={option.value}> {option.value} </MenuItem> ))}
+              </TextField>
+            */}
 
             <TextField id="tiporepair" select required label="Tipo intervenção" className={classes.textField} value={this.state.tiporepair} onChange={this.handleChange('tiporepair')} margin="normal">
               { tiporepair.map(option => ( <MenuItem key={option.value} value={option.categoria}> {option.value} </MenuItem> )) }
@@ -919,6 +929,18 @@ class Repair extends Component {
                         atividades.filter(option => { return option.categoria === this.getSubcategoria().subcategoria || option.categoria === 0 }).map(option => ( <MenuItem key={option.value} value={option.value}> {option.value} </MenuItem> ))
                       }
                     </TextField>
+
+                    <TextField fullWidth id="novo_tech" label="Add novo FE" variant="standard" className={classes.textField} value={atividade.novo_tech} onChange={this.handleMudancaAtividade(idx)} margin="normal" />
+                    <Button onClick={() => {this.adicionaNovoTech(atividade, idx, atividade.novo_tech)}} color="secondary"> +Field Eng </Button>
+                    <Paper className={classes.root}>
+                      {atividade.lista_techs.map(data => { return ( <Chip key={data.key} icon={<TagFacesIcon />} label={data.label} onDelete={this.handleDeleteTecnico(data, idx)} className={classes.chip} /> ); })}
+                    </Paper>
+
+                    {/*
+                    <TextField required id="numerotecnicos" label="Numero Operadores" variant="standard" type="number" className={classes.textField} value={atividade.numerotecnicos} onChange={this.handleChange('numerotecnicos')} margin="normal" />
+                    */}
+
+
                     <TextField id="descricao" label="Descricao" type="standard" variant="standard" value={atividade.descricao} className={classes.textField} InputLabelProps={{ shrink: true, }} onChange={this.handleMudancaAtividade(idx)} />
                     <IconButton onClick={this.handleRemoveAtividade(idx)} aria-label="Delete" className={classes.margin}> <DeleteIcon fontSize="small" /> </IconButton>
                 </div>
@@ -961,7 +983,7 @@ class Repair extends Component {
             ))}
             <Button className={classes.botaoplus} onClick={() => {this.adicionaNovaParada()}} color="secondary"> +Paradas </Button>
 
-            <Button disabled={false} variant="contained" type="submit" color="primary" fullWidth={true} className={classes.button}> Debrifar! </Button>
+            <Button disabled={!this.state.complexo_eolico || !this.state.labor.length >= 1 } variant="contained" type="submit" color="primary" fullWidth={true} className={classes.button}> Debrifar! </Button>
           </form>
         </header>
         <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} onClose={this.handleClose} ContentProps={{ 'aria-describedby': 'message-id', }} message={ <span id="message-id">Repair enviado com sucesso!</span>} />
