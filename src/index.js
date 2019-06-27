@@ -26,7 +26,7 @@ ReactDOM.render(
             <Route path="/" exact={true} component={ControleGrid} />
           */}
           <Route path="/" exact={true} component={ListTurbines} />
-
+          <Route path="/turbineviewer" exact={true} component={ListTurbines} />
           <Route path="/debrifar" exact={true} component={Debrief} />
           <Route path="/lista" exact={true} component={Visualizador} />
           <Route path="/debriefs" exact={true} component={VisualizadorDebrief} />

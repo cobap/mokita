@@ -40,10 +40,10 @@ class ListTurbines extends Component {
 
     return (
       <>
+        <Header name={'ELA'} handleMudancaWindfarm = {handleMudancaWindfarm.bind(this)} handleMudancaStatus = {handleMudancaStatus.bind(this)} windfarm={this.state.windfarm} />
         {/*
-          <Header name={'ELA'} handleMudancaWindfarm = {handleMudancaWindfarm.bind(this)} handleMudancaStatus = {handleMudancaStatus.bind(this)} windfarm={this.state.windfarm} />
+          <TurbineHeader />
         */}
-        <TurbineHeader />
         <TurbineViewer windfarm={this.state.windfarm} />;
       </>
     );
