@@ -60,13 +60,15 @@ const complexo_eolico = [
   { value: 'CPFL', label: 'CPFL' },
   { value: 'ASABRANCA', label: 'Asa Branca' },
   { value: 'RIACHAO', label: 'Riachão' },
-  { value: 'COPEL', label: 'COPEL' },
+  { value: 'COPEL1', label: 'COPEL1' },
+  { value: 'COPEL2', label: 'COPEL2' },
   { value: 'RDV', label: 'RDV' },
   { value: 'CHAPADAI', label: 'Chapada I' },
   { value: 'CHAPADAII', label: 'Chapada II&III' },
   { value: 'CALDEIRAO', label: 'Caldeirão' },
   { value: 'OMEGA2', label: 'Delta 2' },
   { value: 'OMEGA3', label: 'Delta 3' },
+  { value: 'OMEGA5', label: 'Delta 5&6' },
   { value: 'AMONTADA', label: 'Amontada' },
   { value: 'TRAIRI', label: 'Trairi' },
   { value: 'ELETROSUL', label: 'Eletrosul' },
@@ -84,7 +86,8 @@ const complexo_eolico = [
   { value: 'CER', label: 'CER' },
   { value: 'TERRAFORM', label: 'Brookfield' },
   { value: 'TIANGUA', label: 'Tianguá' },
-  { value: 'RENOVA', label: 'AES' }
+  { value: 'RENOVA', label: 'AES' },
+  { value: 'LOMABLANCA', label: 'LOMABLANCA' }
 ];
 
 class Header extends Component {
@@ -124,7 +127,8 @@ class Header extends Component {
                 <div tabIndex={0} role="button" onClick={this.toggleDrawer('left', false)} onKeyDown={this.toggleDrawer('left', false)}> {sideList} </div>
               </Drawer>
 
-              <Typography variant="h6" color="inherit" align="left" className={classes.grow}> {this.props.windfarm} </Typography>
+              <Typography variant="h6" color="inherit" align="left" className={classes.grow}> {this.props.name + ' |'} </Typography>
+              <Typography variant="h6" color="inherit" align="left" className={classes.grow}> {' ' + this.props.windfarm} </Typography>
 
               <div className={classes.menuAjustes} >
                 <IconButton aria-owns={openMenuParques ? 'menu-appbar' : undefined} aria-haspopup="true" onClick={this.handleMenuEscolhaParque} color="inherit" >

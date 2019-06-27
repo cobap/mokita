@@ -71,7 +71,15 @@ export const menuList = (
         <ListItemIcon>
           <AssignmentTurnedInIcon />
         </ListItemIcon>
-        <ListItemText primary="Repair" />
+        <ListItemText primary="MCE & Repair" />
+      </ListItem>
+    </Link>
+    <Link to="/turbineviewer">
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentTurnedInIcon />
+        </ListItemIcon>
+        <ListItemText primary="Turbine Viewer" />
       </ListItem>
     </Link>
   </div>
